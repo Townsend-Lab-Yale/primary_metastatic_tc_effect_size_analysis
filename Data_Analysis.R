@@ -21,8 +21,9 @@ setwd("/Users/andrew/Desktop/Summer/Project/Code")
 # Import Packages
 library(cancereffectsizeR)
 library(data.table)
+library(dplyr)
 
-# 2. Data Loading ----
+# 2. Data Loading and Cleaning ----
 # The file is in Excel
 # Only need to install once
 # install.packages("readxl")
@@ -40,32 +41,22 @@ tc_maf <- preload_maf(maf = paper_tc_data, refset = "ces.refset.hg19",
                       ref_col = "Reference", tumor_allele_col = "Alternate", 
                       keep_extra_columns = TRUE)
 
-# Filtering the data down to the top 20 frequent genes reported by the research
-tc_maf <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", 
-                                   "BRAF", "CDKN2A", "CDKN2B", "NKX2-1","RET", "KMT2C", 
-                                   "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                                   "ATM", "ARID1A"))
+# Filtering the data 
+tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
+                                                   "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
+                                                   "NKX2-1","RET", "KMT2C", "KMT2D", 
+                                                   "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+                                                   "ATM", "ARID1A"))
+tc_maf_select <- tc_maf_select %>% filter (`germline_variant_site` == FALSE)
+tc_maf_select <- tc_maf_select %>% filter (`repetitive_region` == FALSE)
+tc_maf_select <- tc_maf_select %>% filter(is.na(problem))
 
-# 3. Checking Various Metrics ----
-library(dplyr)
-# # Checking observations
-# paper_tc_data %>% summarise(count = n_distinct(`Sample ID`))
-# # Checking if primary with metastases and no metastases are differentiated
-# paper_tc_data %>% summarise(count = n_distinct(`Sample type`))
-# # Check number of genes
-# unique(tc_maf$`Symbol`)
-# 
-# # Checking which samples are missing
-# unique(tc_maf$`Thyroid cancer subtype`)
-# tc_check = distinct(tc_maf, `Unique_Patient_Identifier`, .keep_all = TRUE)
-# table(tc_check$`Thyroid cancer subtype`)
-
-# 4. CESAnalysis Creation ----
+# 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 # Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf, coverage = "genome", maf_name = "TC")
+cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome", maf_name = "TC")
 
 # Improve accuracy of signature extraction by excluding signatures that can 
 # be safely presumed to not be present in the samples
@@ -75,7 +66,7 @@ signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "TC",
 # Adding information about snv_counts, raw_attributions, biological_weights and trinuc_rates
 # to the CESAnalysis
 cesa <- trinuc_mutation_rates(cesa,
-                              signature_set = ces.refset.hg19$signatures$COSMIC_v3,
+                              signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
                               signature_exclusions = signature_exclusions, 
                               assume_identical_mutational_processes = TRUE,
                               sig_averaging_threshold = 0)
@@ -86,7 +77,6 @@ cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$thyroi
 # Including an optional run_name
 cesa <- ces_variant(cesa = cesa, run_name = "recurrents")
 
-# 5. General Results Across all TC Types ----
 # Plotting the most selected variants
 plot_effects(effects = cesa$selection$recurrents)
 
@@ -105,7 +95,7 @@ variants <- select_variants(cesa, genes = genes, gr = combined_coverage)
 
 cesa <- ces_gene_epistasis(cesa = cesa, genes = genes, variants = variants, run_name = "gene_epistasis_example")
 cesa$epistasis$gene_epistasis_example
-  # 5.1 Plotting the General Metastatic Model ----
+  # 3.1 Plotting the General Epistatic Model ----
   require(grid) # Need the grid package for this plot
   results <- cesa$epistasis$gene_epistasis_example
   results <- results[, .(
