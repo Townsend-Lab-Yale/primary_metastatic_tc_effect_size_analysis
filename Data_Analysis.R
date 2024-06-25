@@ -40,6 +40,18 @@ tc_maf <- preload_maf(maf = paper_tc_data, refset = "ces.refset.hg19",
                       sample_col = "Sample ID",  start_col = "Position",
                       ref_col = "Reference", tumor_allele_col = "Alternate", 
                       keep_extra_columns = TRUE)
+# Keep samples where column Problem is equal to NA:
+tc_maf <- tc_maf %>% filter(is.na(problem))
+
+# keeping only samples that do not occur at germline variant sites:
+tc_maf <- tc_maf %>% filter (`germline_variant_site` == FALSE)
+
+# keeping only samples that do not occur in repetitive regions 
+tc_maf <- tc_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
+
+# keeping snv:
+tc_maf <- subset(tc_maf, variant_type == "snv")
+
 
 # Filtering the data 
 tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
@@ -47,9 +59,6 @@ tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF
                                                    "NKX2-1","RET", "KMT2C", "KMT2D", 
                                                    "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
                                                    "ATM", "ARID1A"))
-tc_maf_select <- tc_maf_select %>% filter (`germline_variant_site` == FALSE)
-tc_maf_select <- tc_maf_select %>% filter (`repetitive_region` == FALSE)
-tc_maf_select <- tc_maf_select %>% filter(is.na(problem))
 
 # 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
