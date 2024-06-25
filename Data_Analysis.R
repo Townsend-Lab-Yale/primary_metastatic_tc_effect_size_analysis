@@ -41,27 +41,31 @@ tc_maf <- preload_maf(maf = paper_tc_data, refset = "ces.refset.hg19",
                       ref_col = "Reference", tumor_allele_col = "Alternate", 
                       keep_extra_columns = TRUE)
 
+# Keep samples where column Problem is equal to NA:
+tc_maf <- tc_maf %>% filter(is.na(problem))
+
+# keeping only samples that do not occur at germline variant sites:
+tc_maf <- tc_maf %>% filter (`germline_variant_site` == FALSE)
+
+# keeping only samples that do not occur in repetitive regions 
+tc_maf <- tc_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
+
+# keeping snv:
+tc_maf <- subset(tc_maf, variant_type == "snv")
+
 # Filtering the data 
 tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
                                                    "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
                                                    "NKX2-1","RET", "KMT2C", "KMT2D", 
                                                    "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
                                                    "ATM", "ARID1A"))
-tc_maf_select <- tc_maf_select %>% filter (`germline_variant_site` == FALSE)
-tc_maf_select <- tc_maf_select %>% filter (`repetitive_region` == FALSE)
-tc_maf_select <- tc_maf_select %>% filter(is.na(problem))
 
 # 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 # Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome", maf_name = "TC")
-
-# Improve accuracy of signature extraction by excluding signatures that can 
-# be safely presumed to not be present in the samples
-signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "TC", 
-                                                            treatment_naive = TRUE)
+cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome")
 
 # Adding information about snv_counts, raw_attributions, biological_weights and trinuc_rates
 # to the CESAnalysis
@@ -72,7 +76,7 @@ cesa <- trinuc_mutation_rates(cesa,
                               sig_averaging_threshold = 0)
 
 # Estimating regional rates of mutation in the absence of selection
-cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$thyroid)
+cesa <- gene_mutation_rates(cesa)
 
 # Including an optional run_name
 cesa <- ces_variant(cesa = cesa, run_name = "recurrents")
@@ -94,7 +98,6 @@ combined_coverage <- intersect(cesa$coverage_ranges$exome$`exome+`, cesa$coverag
 variants <- select_variants(cesa, genes = genes, gr = combined_coverage)
 
 cesa <- ces_gene_epistasis(cesa = cesa, genes = genes, variants = variants, run_name = "gene_epistasis_example")
-cesa$epistasis$gene_epistasis_example
   # 3.1 Plotting the General Epistatic Model ----
   require(grid) # Need the grid package for this plot
   results <- cesa$epistasis$gene_epistasis_example
