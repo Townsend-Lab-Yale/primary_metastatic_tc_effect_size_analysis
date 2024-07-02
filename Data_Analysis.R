@@ -60,12 +60,17 @@ tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF
                                                    "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
                                                    "ATM", "ARID1A"))
 
+tc_maf_select <- tc_maf_select %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
+
 # 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 # Loading MAF into CESAnalysis
 cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome")
+
+# We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
+signature_exclusions <- suggest_cosmic_signature_exclusions(treatment_naive = TRUE)
 
 # Adding information about snv_counts, raw_attributions, biological_weights and trinuc_rates
 # to the CESAnalysis
@@ -98,6 +103,11 @@ combined_coverage <- intersect(cesa$coverage_ranges$exome$`exome+`, cesa$coverag
 variants <- select_variants(cesa, genes = genes, gr = combined_coverage)
 
 cesa <- ces_gene_epistasis(cesa = cesa, genes = genes, variants = variants, run_name = "gene_epistasis_example")
+
+cesa <- ces_epistasis(cesa = cesa, variants = variants, run_name = "epistasis")
+
+plot_effects(cesa$selection$gene_epistasis_example)
+
   # 3.1 Plotting the General Epistatic Model ----
   require(grid) # Need the grid package for this plot
   results <- cesa$epistasis$gene_epistasis_example
