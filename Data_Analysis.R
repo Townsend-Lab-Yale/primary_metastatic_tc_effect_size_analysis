@@ -60,7 +60,20 @@ tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF
                                                    "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
                                                    "ATM", "ARID1A"))
 
+# Keeping only Recurrent Variants
 tc_maf_select <- tc_maf_select %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
+
+# Keeping only stop-loss or nonsense mutation for tsg
+tsg_maf <- tc_maf_select %>% filter(`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                                                     "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                                                     "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>%
+  filter(`Mutation type` == "Nonsense_Mutation")
+
+tc_maf_select <- tc_maf_select %>% filter(!`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                                                          "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                                                          "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
+
+tc_maf_select <- rbind(tc_maf_select, tsg_maf)
 
 # 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
