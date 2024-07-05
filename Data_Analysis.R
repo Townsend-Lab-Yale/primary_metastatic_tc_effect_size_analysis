@@ -22,6 +22,7 @@ setwd("/Users/andrew/Desktop/Summer/Project/Code")
 library(cancereffectsizeR)
 library(data.table)
 library(dplyr)
+library(stringr)
 
 # 2. Data Loading and Cleaning ----
 # The file is in Excel
@@ -64,14 +65,15 @@ tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF
 tc_maf_select <- tc_maf_select %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
 
 # Keeping only stop-loss or nonsense mutation for tsg
-tsg_maf <- tc_maf_select %>% filter(`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                                                     "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                                                     "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>%
-  filter(`Mutation type` == "Nonsense_Mutation")
+tsg_maf <- tc_maf_select %>%
+  filter(`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                         "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                         "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>% 
+  filter(`Mutation type` == "Nonsense_Mutation" | str_detect(`Aminoacid change`, "\\*$"))
 
 tc_maf_select <- tc_maf_select %>% filter(!`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                                                          "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                                                          "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
+                                                           "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                                                           "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
 
 tc_maf_select <- rbind(tc_maf_select, tsg_maf)
 
