@@ -82,7 +82,7 @@ tc_maf_select <- rbind(tc_maf_select, tsg_maf)
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 # Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome")
+cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome", maf_name = "Thyroid")
 
 # We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
 signature_exclusions <- suggest_cosmic_signature_exclusions(treatment_naive = TRUE)
@@ -91,12 +91,12 @@ signature_exclusions <- suggest_cosmic_signature_exclusions(treatment_naive = TR
 # to the CESAnalysis
 cesa <- trinuc_mutation_rates(cesa,
                               signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
-                              signature_exclusions = signature_exclusions, 
-                              assume_identical_mutational_processes = TRUE,
-                              sig_averaging_threshold = 0)
+                              signature_exclusions = signature_exclusions,
+                              sig_averaging_threshold = 0,
+                              assume_identical_mutational_processes = TRUE)
 
 # Estimating regional rates of mutation in the absence of selection
-cesa <- gene_mutation_rates(cesa)
+cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$general)
 
 # Including an optional run_name
 cesa <- ces_variant(cesa = cesa, run_name = "recurrents")
