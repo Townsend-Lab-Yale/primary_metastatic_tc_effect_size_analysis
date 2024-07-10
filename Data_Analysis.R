@@ -11,9 +11,10 @@
 # Obtain Reference Dataset (Already Done - Don't Have to do Every Time)
 # options(timeout = 600)
 # remotes::install_github("Townsend-Lab-Yale/ces.refset.hg19@*release")
+# remotes::install_github("Townsend-Lab-Yale/ces.refset.hg38@*release")
 
 # Just in case need to clear environment
-# rm(list=ls())
+rm(list=ls())
 
 # Set Working Directory
 setwd("/Users/andrew/Desktop/Summer/Project/Code")
@@ -29,10 +30,11 @@ library(stringr)
 # Only need to install once
 # install.packages("readxl")
 library(readxl)
+library(readr)
 
 # Loading the data, skipping the first line because it is file description
 # File contains the non-synonymous somatic mutations identified in thyroid cancers (TC) 
-# subjected to targeted massively parallel sequencing
+# subjected to targeted massively parallel sequencing ----
 
 paper_tc_data <- read_excel("TC_Data.xlsx", skip = 1)
 
@@ -77,15 +79,100 @@ tc_maf_select <- tc_maf_select %>% filter(!`Symbol` %in% c("TP53", "NF1", "NF2",
 
 tc_maf_select <- rbind(tc_maf_select, tsg_maf)
 
+# Loading TCGA Data ----
+tcga_maf_file <- "TCGA-THCA.maf.gz"
+if (!file.exists(tcga_maf_file)) {
+  get_TCGA_project_MAF(project = "THCA", filename = tcga_maf_file)
+}
+
+tcga_clinical <- fread("clinical.tsv")
+
+setnames(tcga_clinical, "case_id", "Unique_Patient_Identifier")
+
+tcga_maf <- preload_maf(maf = tcga_maf_file, refset = "ces.refset.hg38",
+                        keep_extra_columns = TRUE)
+
+tcga_maf <- tcga_maf %>% filter(is.na(problem))
+
+tcga_maf <- tcga_maf %>% filter (`germline_variant_site` == FALSE)
+
+tcga_maf <- tcga_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
+
+tcga_maf <- subset(tcga_maf, variant_type == "snv")
+
+tcga_maf <- tcga_maf %>% filter(`Hugo_Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
+                                                   "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
+                                                   "NKX2-1","RET", "KMT2C", "KMT2D", 
+                                                   "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+                                                   "ATM", "ARID1A"))
+
+tcga_maf <- tcga_maf %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
+
+tcga_tsg <- tcga_maf %>%
+  filter(`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                         "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                         "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>% 
+  filter(`Variant_Classification` == "Nonsense_Mutation" | grepl("UAA", `Codons`)
+         | grepl("UAG", `Codons`) | grepl("UGA", `Codons`))
+
+tcga_maf <- tcga_maf %>% filter(!`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                                                           "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                                                           "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
+
+tcga_maf <- rbind(tcga_maf, tcga_tsg)
+
+# Loading Genie Data ----
+genie_tc <- fread("data_mutations_extended.txt")
+
+genie_clinical <- fread("data_clinical_patient.txt", skip = 4)
+
+setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
+
+genie_maf <- preload_maf(maf = genie_tc, refset = "ces.refset.hg19", 
+                      keep_extra_columns = TRUE)
+
+genie_maf <- genie_maf %>% filter(is.na(problem))
+
+genie_maf <- genie_maf %>% filter (`germline_variant_site` == FALSE)
+
+genie_maf <- genie_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
+
+genie_maf <- subset(genie_maf, variant_type == "snv")
+
+genie_maf <- genie_maf %>% filter(`Hugo_Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
+                                                     "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
+                                                     "NKX2-1","RET", "KMT2C", "KMT2D", 
+                                                     "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+                                                     "ATM", "ARID1A"))
+
+genie_maf <- genie_maf %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
+
+genie_tsg <- genie_maf %>%
+  filter(`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                              "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                              "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>% 
+  filter(`Variant_Classification` == "Nonsense_Mutation" | grepl("UAA", `Codons`)
+         | grepl("UAG", `Codons`) | grepl("UGA", `Codons`))
+
+genie_maf <- genie_maf %>% filter(!`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
+                                                      "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
+                                                      "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
+
+genie_maf <- rbind(genie_maf, genie_tsg)
+
 # 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 # Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome", maf_name = "Thyroid")
+cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome", maf_name = "THCA")
+
+# Loading Clinical Data
+cesa <- load_sample_data(cesa, tcga_clinical)
 
 # We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
-signature_exclusions <- suggest_cosmic_signature_exclusions(treatment_naive = TRUE)
+signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",
+                                                            treatment_naive = TRUE)
 
 # Adding information about snv_counts, raw_attributions, biological_weights and trinuc_rates
 # to the CESAnalysis
@@ -96,7 +183,7 @@ cesa <- trinuc_mutation_rates(cesa,
                               assume_identical_mutational_processes = TRUE)
 
 # Estimating regional rates of mutation in the absence of selection
-cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$general)
+cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$THCA)
 
 # Including an optional run_name
 cesa <- ces_variant(cesa = cesa, run_name = "recurrents")
