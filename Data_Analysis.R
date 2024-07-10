@@ -124,9 +124,11 @@ tcga_maf <- rbind(tcga_maf, tcga_tsg)
 # Loading Genie Data ----
 genie_tc <- fread("data_mutations_extended.txt")
 
-genie_clinical <- fread("data_clinical_patient.txt", skip = 4)
+genie_clinical <- fread("data_clinical_sample.txt", skip = 4)
 
 setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
+
+genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` = "Thyroid Cancer")
 
 genie_maf <- preload_maf(maf = genie_tc, refset = "ces.refset.hg19", 
                       keep_extra_columns = TRUE)
