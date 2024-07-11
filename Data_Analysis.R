@@ -34,15 +34,15 @@ library(readr)
 
 # Loading the data, skipping the first line because it is file description
 # File contains the non-synonymous somatic mutations identified in thyroid cancers (TC) 
-# subjected to targeted massively parallel sequencing ----
+# subjected to targeted massively parallel sequencing 
+# Paper Data ----
 
 paper_tc_data <- read_excel("TC_Data.xlsx", skip = 1)
 
 # Refset determined using IGV
 tc_maf <- preload_maf(maf = paper_tc_data, refset = "ces.refset.hg19", 
                       sample_col = "Sample ID",  start_col = "Position",
-                      ref_col = "Reference", tumor_allele_col = "Alternate", 
-                      keep_extra_columns = TRUE)
+                      ref_col = "Reference", tumor_allele_col = "Alternate")
 
 # Keep samples where column Problem is equal to NA:
 tc_maf <- tc_maf %>% filter(is.na(problem))
@@ -56,29 +56,6 @@ tc_maf <- tc_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in
 # keeping snv:
 tc_maf <- subset(tc_maf, variant_type == "snv")
 
-# Filtering the data 
-tc_maf_select <- tc_maf %>% filter(`Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
-                                                   "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
-                                                   "NKX2-1","RET", "KMT2C", "KMT2D", 
-                                                   "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                                                   "ATM", "ARID1A"))
-
-# Keeping only Recurrent Variants
-tc_maf_select <- tc_maf_select %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
-
-# Keeping only stop-loss or nonsense mutation for tsg
-tsg_maf <- tc_maf_select %>%
-  filter(`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                         "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                         "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>% 
-  filter(`Mutation type` == "Nonsense_Mutation" | str_detect(`Aminoacid change`, "\\*$"))
-
-tc_maf_select <- tc_maf_select %>% filter(!`Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                                                           "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                                                           "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
-
-tc_maf_select <- rbind(tc_maf_select, tsg_maf)
-
 # Loading TCGA Data ----
 tcga_maf_file <- "TCGA-THCA.maf.gz"
 if (!file.exists(tcga_maf_file)) {
@@ -89,8 +66,7 @@ tcga_clinical <- fread("clinical.tsv")
 
 setnames(tcga_clinical, "case_id", "Unique_Patient_Identifier")
 
-tcga_maf <- preload_maf(maf = tcga_maf_file, refset = "ces.refset.hg38",
-                        keep_extra_columns = TRUE)
+tcga_maf <- preload_maf(maf = tcga_maf_file, refset = "ces.refset.hg38")
 
 tcga_maf <- tcga_maf %>% filter(is.na(problem))
 
@@ -100,27 +76,6 @@ tcga_maf <- tcga_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier
 
 tcga_maf <- subset(tcga_maf, variant_type == "snv")
 
-tcga_maf <- tcga_maf %>% filter(`Hugo_Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
-                                                   "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
-                                                   "NKX2-1","RET", "KMT2C", "KMT2D", 
-                                                   "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                                                   "ATM", "ARID1A"))
-
-tcga_maf <- tcga_maf %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
-
-tcga_tsg <- tcga_maf %>%
-  filter(`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                         "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                         "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>% 
-  filter(`Variant_Classification` == "Nonsense_Mutation" | grepl("UAA", `Codons`)
-         | grepl("UAG", `Codons`) | grepl("UGA", `Codons`))
-
-tcga_maf <- tcga_maf %>% filter(!`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                                                           "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                                                           "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
-
-tcga_maf <- rbind(tcga_maf, tcga_tsg)
-
 # Loading Genie Data ----
 genie_tc <- fread("data_mutations_extended.txt")
 
@@ -128,10 +83,13 @@ genie_clinical <- fread("data_clinical_sample.txt", skip = 4)
 
 setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
 
-genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` = "Thyroid Cancer")
+genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` == "Thyroid Cancer")
 
-genie_maf <- preload_maf(maf = genie_tc, refset = "ces.refset.hg19", 
-                      keep_extra_columns = TRUE)
+genie_sample <- unique(genie_clinical$SAMPLE_ID)
+
+genie_maf <- preload_maf(maf = genie_tc, refset = "ces.refset.hg19")
+
+genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(genie_sample))
 
 genie_maf <- genie_maf %>% filter(is.na(problem))
 
@@ -141,36 +99,27 @@ genie_maf <- genie_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_ti
 
 genie_maf <- subset(genie_maf, variant_type == "snv")
 
-genie_maf <- genie_maf %>% filter(`Hugo_Symbol` %in% c("TP53", "PIK3CA", "TERT", "NF1", "NF2", 
-                                                     "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
-                                                     "NKX2-1","RET", "KMT2C", "KMT2D", 
-                                                     "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                                                     "ATM", "ARID1A"))
-
-genie_maf <- genie_maf %>% group_by(variant_id) %>% filter(n() > 1) %>% ungroup()
-
-genie_tsg <- genie_maf %>%
-  filter(`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                              "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                              "BCOR", "PTEN", "RBM10", "ATM", "ARID1A")) %>% 
-  filter(`Variant_Classification` == "Nonsense_Mutation" | grepl("UAA", `Codons`)
-         | grepl("UAG", `Codons`) | grepl("UGA", `Codons`))
-
-genie_maf <- genie_maf %>% filter(!`Hugo_Symbol` %in% c("TP53", "NF1", "NF2", "CDKN2A", 
-                                                      "CDKN2B", "NKX2-1", "KMT2C", "KMT2D", 
-                                                      "BCOR", "PTEN", "RBM10", "ATM", "ARID1A"))
-
-genie_maf <- rbind(genie_maf, genie_tsg)
-
 # 3. CESAnalysis Creation and General Results ----
 # Creating CESAnalysis
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
+# Filter Variants
+top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
+               "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+               "ATM", "ARID1A")
+
+tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$gene %in% top_tgs_genes]
+
 # Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf_select, coverage = "genome", maf_name = "THCA")
+cesa <- load_maf(cesa = cesa, maf = tc_maf, coverage = "genome", maf_name = "THCA")
+# cesa <- load_maf(cesa = cesa, maf = tcga_maf, coverage = "genome", maf_name = "TCGA_THCA")
+cesa <- load_maf(cesa, maf = genie_maf, maf_name = "Genie_THCA", coverage = "targeted",
+                 covered_regions = tgs_coverage, covered_regions_name = "top_genes",
+                 covered_regions_padding = 50)
 
 # Loading Clinical Data
-cesa <- load_sample_data(cesa, tcga_clinical)
+# cesa <- load_sample_data(cesa, tcga_clinical)
+cesa <- load_sample_data(cesa, genie_clinical)
 
 # We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
 signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",
