@@ -11,7 +11,6 @@
 # Obtain Reference Dataset (Already Done - Don't Have to do Every Time)
 # options(timeout = 600)
 # remotes::install_github("Townsend-Lab-Yale/ces.refset.hg19@*release")
-# remotes::install_github("Townsend-Lab-Yale/ces.refset.hg38@*release")
 
 # Just in case need to clear environment
 rm(list=ls())
@@ -66,7 +65,11 @@ tcga_clinical <- fread("clinical.tsv")
 
 setnames(tcga_clinical, "case_id", "Unique_Patient_Identifier")
 
-tcga_maf <- preload_maf(maf = tcga_maf_file, refset = "ces.refset.hg38")
+names(tcga_clinical)[which(names(tcga_clinical) == "residual_disease")[2]] <- "residual_disease_2"
+
+tcga_maf <- preload_maf(maf = tcga_maf_file, 
+                        chain_file = "hg38ToHg19.over.chain", 
+                        refset = "ces.refset.hg19")
 
 tcga_maf <- tcga_maf %>% filter(is.na(problem))
 
@@ -108,17 +111,17 @@ top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN
                "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
                "ATM", "ARID1A")
 
-tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$gene %in% top_tgs_genes]
+tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
 
 # Loading MAF into CESAnalysis
 cesa <- load_maf(cesa = cesa, maf = tc_maf, coverage = "genome", maf_name = "THCA")
-# cesa <- load_maf(cesa = cesa, maf = tcga_maf, coverage = "genome", maf_name = "TCGA_THCA")
+cesa <- load_maf(cesa = cesa, maf = tcga_maf, coverage = "genome", maf_name = "TCGA_THCA")
 cesa <- load_maf(cesa, maf = genie_maf, maf_name = "Genie_THCA", coverage = "targeted",
                  covered_regions = tgs_coverage, covered_regions_name = "top_genes",
-                 covered_regions_padding = 50)
+                 covered_regions_padding = 10)
 
 # Loading Clinical Data
-# cesa <- load_sample_data(cesa, tcga_clinical)
+cesa <- load_sample_data(cesa, tcga_clinical)
 cesa <- load_sample_data(cesa, genie_clinical)
 
 # We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
@@ -129,9 +132,7 @@ signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA"
 # to the CESAnalysis
 cesa <- trinuc_mutation_rates(cesa,
                               signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
-                              signature_exclusions = signature_exclusions,
-                              sig_averaging_threshold = 0,
-                              assume_identical_mutational_processes = TRUE)
+                              signature_exclusions = signature_exclusions)
 
 # Estimating regional rates of mutation in the absence of selection
 cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$THCA)
