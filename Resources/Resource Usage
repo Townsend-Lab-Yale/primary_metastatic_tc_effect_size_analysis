@@ -1,1 +1,7 @@
+The Chain File for liftOver converting TCGA Data from hg38 to hg19 is in the file "hg38ToHg19.over.chain"
 
+Data from the original paper (Maximo et al., 2024), is in the file "Paper_TC_Data.txt"
+
+TCGA data is "TCGA-THCA.maf.gz", while the TCGA clinical data is in "TCGA_Clinical.txt"
+
+GENIE data is located in "GENIE_Mutation_Data.txt", while the GENIE clinical data is in "GENIE_Clinical.txt"
