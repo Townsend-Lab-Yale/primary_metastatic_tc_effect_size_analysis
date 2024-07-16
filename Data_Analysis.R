@@ -36,7 +36,7 @@ library(readr)
 # subjected to targeted massively parallel sequencing 
 # Paper Data ----
 
-paper_tc_data <- read_excel("TC_Data.xlsx", skip = 1)
+paper_tc_data <- fread("Paper_TC_Data.txt", skip = 1)
 
 # Refset determined using IGV
 tc_maf <- preload_maf(maf = paper_tc_data, refset = "ces.refset.hg19", 
@@ -61,7 +61,7 @@ if (!file.exists(tcga_maf_file)) {
   get_TCGA_project_MAF(project = "THCA", filename = tcga_maf_file)
 }
 
-tcga_clinical <- fread("clinical.tsv")
+tcga_clinical <- fread("TCGA_Clinical.txt")
 
 setnames(tcga_clinical, "case_id", "Unique_Patient_Identifier")
 
@@ -80,9 +80,9 @@ tcga_maf <- tcga_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier
 tcga_maf <- subset(tcga_maf, variant_type == "snv")
 
 # Loading Genie Data ----
-genie_tc <- fread("data_mutations_extended.txt")
+genie <- fread("GENIE_Mutation_Data.txt")
 
-genie_clinical <- fread("data_clinical_sample.txt", skip = 4)
+genie_clinical <- fread("GENIE_Clinical.txt", skip = 4)
 
 setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
 
@@ -90,7 +90,7 @@ genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` == "Thyroid Cancer")
 
 genie_sample <- unique(genie_clinical$SAMPLE_ID)
 
-genie_maf <- preload_maf(maf = genie_tc, refset = "ces.refset.hg19")
+genie_maf <- preload_maf(maf = genie, refset = "ces.refset.hg19")
 
 genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(genie_sample))
 
