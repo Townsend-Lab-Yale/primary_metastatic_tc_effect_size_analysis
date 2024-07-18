@@ -6,7 +6,7 @@ library(ces.refset.hg19)
 library(stringr)
 
 # Set Working Directory
-setwd("C:/Moein/projects/andrewju_project")
+setwd("/Users/andrew/Desktop/Summer/Project/Code")
 
 ## preparing the data
 # Paper Data
@@ -95,3 +95,8 @@ cesa <- trinuc_mutation_rates(cesa,
                               signature_exclusions = signature_exclusions)
 
 
+# Estimating Regional Rates of Mutation in the Absence of Selection
+cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$THCA)
+
+# Using Estimated Rates and MAF Variant Data to infer selection intensity in a default model
+cesa <- ces_variant(cesa = cesa, run_name = "recurrents")
