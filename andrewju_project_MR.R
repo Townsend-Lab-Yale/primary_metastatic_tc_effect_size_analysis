@@ -8,6 +8,7 @@ library(ggplot2)
 library(ggrepel)
 library(MutationalPatterns)
 library(tidyverse)
+library(patchwork)
 
 # Set Working Directory
 setwd("/Users/andrew/Desktop/Summer/Project/Code")
@@ -153,13 +154,16 @@ primary_trinuc_rates_long <- primary_trinuc_rates %>%
                values_to = "rate")
 
 # Plot the trinucleotide mutation rates using ggplot2
-ggplot(primary_trinuc_rates_long, aes(x = trinucleotide, y = rate, fill = trinucleotide)) +
+primary_trinuc_rate_plot <- ggplot(primary_trinuc_rates_long, 
+                                   aes(x = trinucleotide, y = rate, 
+                                       fill = substr(primary_trinuc_rates_long$trinucleotide, 1, 1))) +
   geom_bar(stat = "identity") +
   theme_minimal() +
   labs(title = "Trinucleotide Mutation Rates in Primary Tumors",
-       x = "Trinucleotide Variant",
-       y = "Trinucleotide Rates") +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+       x = NULL,
+       y = "Trinucleotide Rates") + guides(fill = guide_legend(title = NULL)) +
+  theme(axis.text.x = element_blank(),
+        axis.title.x = element_blank())
 
 # Metastasis ----
 meta_cesa <- CESAnalysis(refset = "ces.refset.hg19")
@@ -209,10 +213,17 @@ meta_trinuc_rates_long <- meta_trinuc_rates %>%
                values_to = "rate")
 
 # Plot the trinucleotide mutation rates using ggplot2
-ggplot(meta_trinuc_rates_long, aes(x = trinucleotide, y = rate, fill = trinucleotide)) +
+meta_trinuc_rate_plot <- ggplot(meta_trinuc_rates_long, aes(x = trinucleotide, y = rate, 
+                                                            fill = substr(meta_trinuc_rates_long$trinucleotide, 1, 1))) +
   geom_bar(stat = "identity") +
   theme_minimal() +
   labs(title = "Trinucleotide Mutation Rates in Metastatic Tumors",
        x = "Trinucleotide Variant",
-       y = "Trinucleotide Rates") +
+       y = "Trinucleotide Rates") + guides(fill = guide_legend(title = NULL)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# ----
+combined_plot <- primary_trinuc_rate_plot / meta_trinuc_rate_plot + 
+  plot_layout(guides = 'collect')
+
+print(combined_plot)
