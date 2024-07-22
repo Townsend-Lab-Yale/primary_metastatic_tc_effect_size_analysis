@@ -161,7 +161,7 @@ primary_trinuc_rate_plot <- ggplot(primary_trinuc_rates_long,
   theme_minimal() +
   labs(title = "Trinucleotide Mutation Rates in Primary Tumors",
        x = NULL,
-       y = "Trinucleotide Rates") + guides(fill = guide_legend(title = NULL)) +
+       y = "Trinucleotide Rates") + guides(fill = guide_legend(title = "First Base")) +
   theme(axis.text.x = element_blank(),
         axis.title.x = element_blank())
 
@@ -219,7 +219,7 @@ meta_trinuc_rate_plot <- ggplot(meta_trinuc_rates_long, aes(x = trinucleotide, y
   theme_minimal() +
   labs(title = "Trinucleotide Mutation Rates in Metastatic Tumors",
        x = "Trinucleotide Variant",
-       y = "Trinucleotide Rates") + guides(fill = guide_legend(title = NULL)) +
+       y = "Trinucleotide Rates") + guides(fill = guide_legend(title = "First Base")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
 # ----
