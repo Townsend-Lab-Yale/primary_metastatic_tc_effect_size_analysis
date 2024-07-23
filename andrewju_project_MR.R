@@ -222,8 +222,35 @@ meta_trinuc_rate_plot <- ggplot(meta_trinuc_rates_long, aes(x = trinucleotide, y
        y = "Trinucleotide Rates") + guides(fill = guide_legend(title = "First Base")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
-# ----
+# Figure Merge----
 combined_plot <- primary_trinuc_rate_plot / meta_trinuc_rate_plot + 
   plot_layout(guides = 'collect')
 
 print(combined_plot)
+
+# TXT File - Column 1: Sample ID | Column 2: Primary / Metastasis ----
+sample_info <- tc_maf %>% select(`Unique_Patient_Identifier`, `Sample type`)
+
+setnames(tcga_maf, "Unique_Patient_Identifier", "case_submitter_id")
+tcga <- full_join(tcga_maf, tcga_clinical, by = "case_submitter_id")
+tcga <- tcga %>% select(`case_submitter_id`, `ajcc_pathologic_m`)
+setnames(tcga, "case_submitter_id", "Unique_Patient_Identifier")
+setnames(tcga, "ajcc_pathologic_m", "Sample type")
+
+sample_info <- rbind(sample_info, tcga)
+
+genie_full <- full_join(genie_maf, genie_clinical, by = "Unique_Patient_Identifier")
+genie_full <- genie_full %>% select(`Unique_Patient_Identifier`, `SAMPLE_TYPE`)
+setnames(genie_full, "SAMPLE_TYPE", "Sample type")
+
+sample_info <- rbind(sample_info, genie_full)
+
+sample_info$`Sample type`[sample_info$`Sample type` == "M0"] <- "Primary"
+sample_info$`Sample type`[sample_info$`Sample type` == "M1"] <- "Metastasis"
+sample_info$`Sample type`[sample_info$`Sample type` == "MX" | 
+                            sample_info$`Sample type` == "'--" | 
+                            sample_info$`Sample type` == "Not Applicable or Heme" | 
+                            sample_info$`Sample type` == "Unspecified" | 
+                            sample_info$`Sample type` == "Not Collected"] <- NA
+
+write.xlsx(sample_info, file = "Sample Information.xlsx")
