@@ -14,7 +14,6 @@ library(openxlsx)
 # Set Working Directory
 setwd("/Users/andrew/Desktop/Summer/Project/Code")
 
-## preparing the data
 # Paper Data
 
 paper_tc_data <- fread("Paper_TC_Data.txt", skip = 1)
@@ -69,63 +68,13 @@ tc_maf <- subset(tc_maf, variant_type == "snv")
 tcga_maf <- subset(tcga_maf, variant_type == "snv")
 genie_maf <- subset(genie_maf, variant_type == "snv")
 
-# 3. CESAnalysis Creation and General Results ----
-# Creating CESAnalysis
-cesa <- CESAnalysis(refset = "ces.refset.hg19")
-
-# Filter Variants
-top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B",
-                   "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10",
-                   "ATM", "ARID1A")
-
-tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
-
-# Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf, coverage = "targeted", maf_name = "THCA",
-                 covered_regions = tgs_coverage, covered_regions_name = "top_genes",
-                 covered_regions_padding = 10)
-cesa <- load_maf(cesa = cesa, maf = tcga_maf, coverage = "genome", maf_name = "TCGA_THCA")
-cesa <- load_maf(cesa, maf = genie_maf, maf_name = "Genie_THCA", coverage = "targeted",
-                 covered_regions = tgs_coverage, covered_regions_name = "top_genes",
-                 covered_regions_padding = 10)
-
-# Loading Clinical Data
-cesa <- load_sample_data(cesa, tcga_clinical)
-cesa <- load_sample_data(cesa, genie_clinical)
-
-# We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
-signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",
-                                                            treatment_naive = TRUE)
-
-# Adding information about snv_counts, raw_attributions, biological_weights and trinuc_rates
-# to the CESAnalysis
-cesa <- trinuc_mutation_rates(cesa,
-                              signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
-                              signature_exclusions = signature_exclusions)
-
-cesa <- gene_mutation_rates(cesa, covariates = ces.refset.hg19$covariates$THCA)
-
-# all_variants <- unique(cesa$variants$variant_id)
-# 
-# cesa <- baseline_mutation_rates(cesa, variant_ids = as.character(all_variants))
-
-# Including an optional run_name
-cesa <- ces_variant(cesa = cesa, run_name = "recurrents")
-
-plot_effects(cesa$selection$recurrents)
-
-plot_effects(cesa$selection$recurrents,
-             group_by = "gene", topn = 10,
-             label_individual_variants = FALSE
-)
-
 # Trinucleotide Mutation Profile for Primary and Metastatic Tumors ----
 primary_cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 primary_samples <- tc_maf %>% filter(`Sample type` == "Primary")
 primary_cesa <- load_maf(cesa = primary_cesa, maf = primary_samples, 
-                 coverage = "targeted", maf_name = "THCA", covered_regions = tgs_coverage, covered_regions_name = "top_genes",
-                 covered_regions_padding = 10)
+                         coverage = "targeted", maf_name = "THCA", covered_regions = tgs_coverage, covered_regions_name = "top_genes",
+                         covered_regions_padding = 10)
 
 primary_tcga_clinical <- tcga_clinical %>% filter(`ajcc_pathologic_m` == "M0")
 primary_tcga <- unique(primary_tcga_clinical$case_submitter_id)
@@ -138,9 +87,9 @@ primary_genie <- unique(primary_genie_clinical$SAMPLE_ID)
 primary_genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(primary_genie))
 
 top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
-                                       "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                                       "ATM", "ARID1A")
-                    
+                   "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+                   "ATM", "ARID1A")
+
 tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
 
 primary_cesa <- load_maf(primary_cesa, maf = primary_genie_maf, 
@@ -153,10 +102,10 @@ signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA"
                                                             treatment_naive = TRUE)
 
 primary_cesa <- trinuc_mutation_rates(primary_cesa,
-                              signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
-                              signature_exclusions = signature_exclusions,
-                              sig_averaging_threshold = 0,
-                              assume_identical_mutational_processes = TRUE)
+                                      signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
+                                      signature_exclusions = signature_exclusions,
+                                      sig_averaging_threshold = 0,
+                                      assume_identical_mutational_processes = TRUE)
 
 # Extract trinucleotide mutation rates from CESAnalysis object
 primary_trinuc_rates <- primary_cesa$trinuc_rates
@@ -185,7 +134,7 @@ meta_cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 meta_samples <- tc_maf %>% filter(`Sample type` == "Metastasis")
 meta_cesa <- load_maf(cesa = meta_cesa, maf = meta_samples, 
-                         coverage = "targeted", maf_name = "THCA",
+                      coverage = "targeted", maf_name = "THCA",
                       covered_regions = tgs_coverage, covered_regions_name = "top_genes",
                       covered_regions_padding = 10)
 
@@ -206,17 +155,17 @@ top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN
 tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
 
 meta_cesa <- load_maf(meta_cesa, maf = meta_genie_maf, 
-                         coverage = "targeted",
-                         covered_regions = tgs_coverage, covered_regions_name = "topgenes",
-                         covered_regions_padding = 10)
+                      coverage = "targeted",
+                      covered_regions = tgs_coverage, covered_regions_name = "topgenes",
+                      covered_regions_padding = 10)
 meta_cesa <- load_sample_data(meta_cesa, meta_genie_clinical)
 
 signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",
                                                             treatment_naive = TRUE)
 
 meta_cesa <- trinuc_mutation_rates(meta_cesa,
-                                      signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
-                                      signature_exclusions = signature_exclusions,
+                                   signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
+                                   signature_exclusions = signature_exclusions,
                                    sig_averaging_threshold = 0,
                                    assume_identical_mutational_processes = TRUE)
 
@@ -245,35 +194,3 @@ combined_plot <- primary_trinuc_rate_plot / meta_trinuc_rate_plot +
   plot_layout(guides = 'collect')
 
 print(combined_plot)
-
-# TXT File - Column 1: Sample ID | Column 2: Primary / Metastasis ----
-sample_info <- tc_maf %>% select(`Unique_Patient_Identifier`, `Sample type`)
-
-setnames(tcga_maf, "Unique_Patient_Identifier", "case_submitter_id")
-tcga <- full_join(tcga_maf, tcga_clinical, by = "case_submitter_id")
-tcga <- tcga %>% select(`case_submitter_id`, `ajcc_pathologic_m`)
-setnames(tcga, "case_submitter_id", "Unique_Patient_Identifier")
-setnames(tcga, "ajcc_pathologic_m", "Sample type")
-
-sample_info <- rbind(sample_info, tcga)
-
-genie_full <- full_join(genie_maf, genie_clinical, by = "Unique_Patient_Identifier")
-genie_full <- genie_full %>% select(`Unique_Patient_Identifier`, `SAMPLE_TYPE`)
-setnames(genie_full, "SAMPLE_TYPE", "Sample type")
-
-sample_info <- rbind(sample_info, genie_full)
-
-sample_info$`Sample type`[sample_info$`Sample type` == "M0"] <- "Primary"
-sample_info$`Sample type`[sample_info$`Sample type` == "M1"] <- "Metastasis"
-sample_info$`Sample type`[sample_info$`Sample type` == "MX" |
-                            sample_info$`Sample type` == "'--" |
-                            sample_info$`Sample type` == "Not Applicable or Heme" |
-                            sample_info$`Sample type` == "Unspecified" |
-                            sample_info$`Sample type` == "Not Collected"] <- NA
-
-duplicates <- sample_info %>% group_by(`Unique_Patient_Identifier`) %>%
-  filter(n_distinct(`Sample type`) > 1) %>% pull(`Unique_Patient_Identifier`) %>% unique()
-
-sample_info <- sample_info %>% filter(!`Unique_Patient_Identifier` %in% duplicates)
-
-write.xlsx(sample_info, file = "Sample Information.xlsx")

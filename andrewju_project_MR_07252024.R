@@ -7,10 +7,12 @@ library(stringr)
 library(ggrepel)
 
 # Set Working Directory
-setwd("C:/Moein/projects/andrewju_project")
+setwd("/Users/andrew/Desktop/Summer/Project/Code")
 
 
-Sample_Information <- read.delim("C:/Moein/projects/andrewju_project/Sample_Information.txt")
+Sample_Information <- read.delim("Sample_Information.txt")
+
+setnames(Sample_Information, "Sample.type", "Sample_type")
 
 # Keep only rows with "Primary" and "Metastasis":
 filtered_samples <- Sample_Information %>% 
@@ -105,7 +107,9 @@ top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN
 tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
 
 # Loading MAF into CESAnalysis
-cesa <- load_maf(cesa = cesa, maf = tc_maf, coverage = "genome", maf_name = "THCA")
+cesa <- load_maf(cesa = cesa, maf = tc_maf, coverage = "targeted", maf_name = "THCA",
+                 covered_regions = tgs_coverage, covered_regions_name = "top_genes",
+                 covered_regions_padding = 10)
 cesa <- load_maf(cesa = cesa, maf = tcga_maf, coverage = "genome", maf_name = "TCGA_THCA")
 cesa <- load_maf(cesa, maf = genie_maf, maf_name = "Genie_THCA", coverage = "targeted",
                  covered_regions = tgs_coverage, covered_regions_name = "top_genes",
@@ -145,6 +149,6 @@ rownames(summed_snv_by_group) <- rownames(snv_counts)
 Figure_1 <- MutationalPatterns::plot_96_profile(summed_snv_by_group, ymax = 0.25)
 ggsave("Figure.png", width = 8, height = 6, dpi = 600)
 
-
 #End
+
 
