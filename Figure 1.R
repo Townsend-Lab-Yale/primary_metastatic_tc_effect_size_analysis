@@ -14,8 +14,32 @@ library(openxlsx)
 # Set Working Directory
 setwd("/Users/andrew/Desktop/Summer/Project/Code")
 
-# Paper Data
+Sample_Information <- read.delim("Sample_Information.txt")
 
+setnames(Sample_Information, "Sample.type", "Sample_type")
+
+# Keep only rows with "Primary" and "Metastasis":
+filtered_samples <- Sample_Information %>% 
+  filter(Sample_type %in% c("Primary", "Metastasis"))
+
+# Remove duplicates based on "Unique_Patient_Identifier":
+Sample_type <- filtered_samples %>% 
+  distinct(Unique_Patient_Identifier, .keep_all = TRUE)
+
+# Check for consistency in "Sample_type" for each "Unique_Patient_Identifier"
+consistent_samples <- filtered_samples %>% 
+  group_by(Unique_Patient_Identifier) %>% 
+  filter(n_distinct(Sample_type) == 1) %>% 
+  ungroup() %>% 
+  distinct(Unique_Patient_Identifier, .keep_all = TRUE)
+
+# Identify inconsistent samples
+inconsistent_samples <- filtered_samples %>% 
+  group_by(Unique_Patient_Identifier) %>% 
+  filter(n_distinct(Sample_type) > 1) %>% 
+  ungroup()
+
+# Paper Data
 paper_tc_data <- fread("Paper_TC_Data.txt", skip = 1)
 
 # Refset determined using IGV
@@ -71,6 +95,12 @@ genie_maf <- subset(genie_maf, variant_type == "snv")
 # Trinucleotide Mutation Profile for Primary and Metastatic Tumors ----
 primary_cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
+top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
+                   "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+                   "ATM", "ARID1A")
+
+tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
+
 primary_samples <- tc_maf %>% filter(`Sample type` == "Primary")
 primary_cesa <- load_maf(cesa = primary_cesa, maf = primary_samples, 
                          coverage = "targeted", maf_name = "THCA", covered_regions = tgs_coverage, covered_regions_name = "top_genes",
@@ -86,17 +116,13 @@ primary_genie_clinical <- genie_clinical %>% filter(`SAMPLE_TYPE` == "Primary")
 primary_genie <- unique(primary_genie_clinical$SAMPLE_ID)
 primary_genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(primary_genie))
 
-top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
-                   "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                   "ATM", "ARID1A")
-
-tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
-
 primary_cesa <- load_maf(primary_cesa, maf = primary_genie_maf, 
                          coverage = "targeted",
                          covered_regions = tgs_coverage, covered_regions_name = "topgenes",
                          covered_regions_padding = 10)
 primary_cesa <- load_sample_data(primary_cesa, primary_genie_clinical)
+
+primary_cesa <- load_sample_data(primary_cesa, Sample_type)
 
 signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",
                                                             treatment_naive = TRUE)
@@ -108,8 +134,12 @@ primary_cesa <- trinuc_mutation_rates(primary_cesa,
                                       assume_identical_mutational_processes = TRUE)
 
 # Extract trinucleotide mutation rates from CESAnalysis object
-primary_trinuc_rates <- primary_cesa$trinuc_rates
-primary_trinuc_rates <- primary_trinuc_rates[, -1] 
+primary_snv_counts <- primary_cesa$mutational_signature$snv_counts
+
+primary_summed_snv_by_group <- data.table()
+primary_receptor_groups <- unique(na.omit(primary_cesa$samples$Sample_type))
+primary_samples_with_snvs <- primary_cesa$samples[colnames(snv_counts), 
+                                          on = "Unique_Patient_Identifier"]
 
 # Prepare the data for plotting
 primary_trinuc_rates_long <- primary_trinuc_rates %>%
@@ -147,12 +177,6 @@ meta_cesa <- load_sample_data(meta_cesa, meta_tcga_clinical)
 meta_genie_clinical <- genie_clinical %>% filter(`SAMPLE_TYPE` == "Metastasis")
 meta_genie <- unique(meta_genie_clinical$SAMPLE_ID)
 meta_genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(meta_genie))
-
-top_tgs_genes <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
-                   "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
-                   "ATM", "ARID1A")
-
-tgs_coverage <- ces.refset.hg19$gr_genes[ces.refset.hg19$gr_genes$names %in% top_tgs_genes]
 
 meta_cesa <- load_maf(meta_cesa, maf = meta_genie_maf, 
                       coverage = "targeted",
