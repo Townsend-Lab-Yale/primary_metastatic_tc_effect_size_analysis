@@ -96,7 +96,7 @@ tcga_maf <- subset(tcga_maf, variant_type == "snv")
 genie_maf <- subset(genie_maf, variant_type == "snv")
 
 # 3. CESAnalysis Creation and General Results ----
-# Creating CESAnalysis
+###creating CESAnalysis and loading data 
 cesa <- CESAnalysis(refset = "ces.refset.hg19")
 
 # Filter Variants
@@ -120,129 +120,88 @@ cesa <- load_sample_data(cesa, tcga_clinical)
 cesa <- load_sample_data(cesa, genie_clinical)
 cesa <- load_sample_data(cesa, Sample_type)
 
-# We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
-signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",
-                                                            treatment_naive = TRUE)
-
-# Adding information about snv_counts, raw_attributions, biological_weights and trinuc_rates
-# to the CESAnalysis
-cesa <- trinuc_mutation_rates(cesa,
-                              signature_set = ces.refset.hg19$signatures$COSMIC_v3.2,
-                              signature_exclusions = signature_exclusions)
-
-##Figure:
-
-snv_counts <- cesa$mutational_signatures$snv_counts
-
-summed_snv_by_group <- data.table()
-receptor_groups <- unique(na.omit(cesa$samples$Sample_type))
-samples_with_snvs <- cesa$samples[colnames(snv_counts), on = "Unique_Patient_Identifier"]
-for (grp in receptor_groups) {
-  curr_samples <- samples_with_snvs[grp, Unique_Patient_Identifier, on = "Sample_type"]
-  curr_snv_sum <- rowSums(snv_counts[, curr_samples])
-  summed_snv_by_group[, (grp) := curr_snv_sum]
-}
-summed_snv_by_group <- as.matrix(summed_snv_by_group)
-colnames(summed_snv_by_group)[c(1, 2)] <- c("Metastases", "Primary")
-summed_snv_by_group <- summed_snv_by_group[, c("Primary", "Metastases")]
-rownames(summed_snv_by_group) <- rownames(snv_counts)
-Figure_1 <- MutationalPatterns::plot_96_profile(summed_snv_by_group, ymax = 0.25)
-ggsave("Figure.png", width = 8, height = 6, dpi = 600)
-
-#End
-
-
-
-
-
-
-
-# load cancer effect size and necessary packages ----
-
-library(cancereffectsizeR)
-library(data.table)
-library(ces.refset.hg19)
-library(MutationalPatterns)
-library(RColorBrewer)
-library(ggrepel)
-library(readr)
-
-
-###creating CESAnalysis and loading data 
-
-cesa <- load_sample_data(cesa, gleason)
-
 #defining groups:
-Late_groups <- cesa$samples[Gleason == "Late", unique(Unique_Patient_Identifier)]
-Metastasis_groups <- cesa$samples[Gleason == "Metastasis", unique(Unique_Patient_Identifier)]
+primary_samples <- consistent_samples[consistent_samples$Sample_type == "Primary", ]
+primary_groups <- cesa$samples[Unique_Patient_Identifier %in% primary_samples$Unique_Patient_Identifier]
 
-cesa_samples_by_groups <- gene_mutation_rates(cesa = cesa_samples_by_groups, covariates = "PRAD", samples = Late_groups, save_all_dndscv_output = T)
-cesa_samples_by_groups <- gene_mutation_rates(cesa = cesa_samples_by_groups, covariates = "PRAD", samples = Metastasis_groups, save_all_dndscv_output = T)
+meta_samples <- consistent_samples[consistent_samples$Sample_type == "Metastasis", ]
+meta_groups <- cesa$samples[Unique_Patient_Identifier %in% meta_samples$Unique_Patient_Identifier]
 
+cesa <- gene_mutation_rates(cesa = cesa, covariates = "THCA", samples = primary_groups, save_all_dndscv_output = T)
+cesa <- gene_mutation_rates(cesa = cesa, covariates = "THCA", samples = meta_groups, save_all_dndscv_output = T)
 
-selected_genes <- c("SPOP", "FOXA1", "AR", "PIK3CA", "PIK3CB", "TP53", "ROCK1", "RHOA", "AKT1", "ATM", "CUL3",
-                    "APC", "CTNNB1", "MUC16", "KMT2C", "KMT2D")
+selected_genes <- top_tgs_genes
 
 RefCDS = ces.refset.hg19$RefCDS
-dndscv_gene_names <- cesa_samples_by_groups$gene_rates$gene
+dndscv_gene_names <- cesa$gene_rates$gene
 nsyn_sites = sapply(RefCDS[dndscv_gene_names], function(x) colSums(x[["L"]])[1])
 
-# selecting mutation rate data for samples in Late_groups
-samples_in_Late_groups <- length(unique(cesa_samples_by_groups$dNdScv_results$rate_grp_2$annotmuts$sampleID ))
+# selecting mutation rate data for samples in primary_groups
+samples_in_primary_groups <- length(unique(cesa$dNdScv_results$rate_grp_1$annotmuts$sampleID))
 
-# selecting mutation rate data for samples in Metastasis_groups
-samples_in_Metastasis_groups <- length(unique(cesa_samples_by_groups$dNdScv_results$rate_grp_3$annotmuts$sampleID ))
+# selecting mutation rate data for samples in metastasis_groups
+samples_in_metastasis_groups <- length(unique(cesa$dNdScv_results$rate_grp_2$annotmuts$sampleID))
 
 library(tidyverse)
-### creating a data frame with mutation rate data for Late_groups and Metastasis_groups
-mut_rate_df <- tibble(gene = cesa_samples_by_groups$dNdScv_results$rate_grp_2$genemuts$gene_name,
-                      exp_Late_mu = cesa_samples_by_groups$dNdScv_results$rate_grp_2$genemuts$exp_syn_cv,
-                      exp_Metastasis_mu = cesa_samples_by_groups$dNdScv_results$rate_grp_3$genemuts$exp_syn_cv)
+
+### creating a data frame with mutation rate data for primary_groups and metastasis_groups
+mut_rate_df <- tibble(gene = cesa$dNdScv_results$rate_grp_1$genemuts$gene_name,
+                      exp_primary_mu = cesa$dNdScv_results$rate_grp_1$genemuts$exp_syn_cv,
+                      exp_metastasis_mu = cesa$dNdScv_results$rate_grp_2$genemuts$exp_syn_cv)
 
 mut_rate_df$n_syn_sites = nsyn_sites[mut_rate_df$gene]
 
 mut_rate_df %>% 
-  mutate(Late_mu = (exp_Late_mu / n_syn_sites) / samples_in_Late_groups) %>%
-  mutate(Metastasis_mu = (exp_Metastasis_mu / n_syn_sites) / samples_in_Metastasis_groups) %>%
-  mutate(cancer_greater = Metastasis_mu > Late_mu) -> 
+  mutate(primary_mu = (exp_primary_mu / n_syn_sites) / samples_in_primary_groups) %>%
+  mutate(metastasis_mu = (exp_metastasis_mu / n_syn_sites) / samples_in_metastasis_groups) %>%
+  mutate(cancer_greater = metastasis_mu > primary_mu) -> 
   mut_rate_df
 
-# defining rate 1 and rate 2 as mutation rates for Late_groups and Metastasis_groups
+# defining rate 1 and rate 2 as mutation rates for primary_groups and metastasis_groups
 rate_1 <- mut_rate_df|>
-  select(gene, Late_mu)
+  select(gene, primary_mu)
 rate_2 <- mut_rate_df|>
-  select(gene, Metastasis_mu)
+  select(gene, metastasis_mu)
 
 # change in mutation rate across stages
 mut_rate_df <- mut_rate_df %>% 
-  select(gene, Late_mu, Metastasis_mu) %>% 
-  mutate(p_1 = Late_mu / Metastasis_mu) %>% 
+  select(gene, primary_mu, metastasis_mu) %>% 
+  mutate(p_1 = primary_mu / metastasis_mu) %>% 
   mutate(p_2 = 1 - p_1)
-  
+
 # saving "last" gene mutation rates into separate data frame, "last" rates meaning from last stage Metastasis_mu
 set_cancer_rates <- mut_rate_df %>%
-  select(gene, Metastasis_mu) %>%
+  select(gene, metastasis_mu) %>%
   data.table::setDT()
 
 # clear the gene rates in the cesa object 
-cesa_samples_by_groups <- clear_gene_rates(cesa = cesa_samples_by_groups)
+cesa <- clear_gene_rates(cesa = cesa)
 
 # setting gene rates to highest rates from Metastasis_mu
-cesa_samples_by_groups <- set_gene_rates(cesa = cesa_samples_by_groups, rates = set_cancer_rates, missing_genes_take_nearest = T) 
+setnames(set_cancer_rates, "metastasis_mu", "rate")
+
+cesa <- set_gene_rates(cesa = cesa, rates = set_cancer_rates, missing_genes_take_nearest = T) 
 
 # infer trinculeotide-context-specific relative rates of SNV mutation from a mutational signature analysis
-signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "PRAD")
+signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA", 
+                                                            treatment_naive = TRUE)
 
 # estimating trinucleotide mutation rates
-cesa_samples_by_groups <- trinuc_mutation_rates(cesa = cesa_samples_by_groups, signature_set = "COSMIC_v3.2", signature_exclusions = signature_exclusions)
+cesa <- trinuc_mutation_rates(cesa = cesa, signature_set = "COSMIC_v3.2", 
+                                                signature_exclusions = signature_exclusions)
 
 # defining compound variants
-compound <- define_compound_variants(cesa = cesa_samples_by_groups, 
-                                     variant_table = cesa_samples_by_groups$variants |>
+compound <- define_compound_variants(cesa = cesa, 
+                                     variant_table = cesa$variants |>
                                        filter(intergenic == F, gene %in% selected_genes),
                                      by = "gene", merge_distance = Inf)
 
 source("new_sequential_lik.R")
+
+setnames(set_cancer_rates, "rate", "metastasis_mu")
+
+cesa$samples <- cesa$samples %>%
+  left_join(consistent_samples %>% select(Unique_Patient_Identifier, Sample_type), by = "Unique_Patient_Identifier")
 
 for(comp_ind in 1:length(compound)){
   
@@ -252,11 +211,11 @@ for(comp_ind in 1:length(compound)){
   these_props <- mut_rate_df[mut_rate_df$gene == this_gene,c("p_1","p_2")]
   these_props <- c(these_props$p_1, these_props$p_2)
   
-  cesa_samples_by_groups <- ces_variant(cesa = cesa_samples_by_groups, variants = this_comp, model = sequential_lik_dev, 
-                                        ordering_col = 'Gleason', ordering = c('Late', 'Metastasis'), 
+  cesa <- ces_variant(cesa = cesa, variants = this_comp, model = sequential_lik_dev, 
+                      ordering_col = "Sample_type",
+                                        ordering = c('Primary', 'Metastasis'),
                                         lik_args = list(sequential_mut_prop = these_props), run_name = this_gene)
   
 }
 
-
-
+plot_effects(effects = cesa$selection$ARID1A, group_by = "variant")
