@@ -200,9 +200,6 @@ source("new_sequential_lik.R")
 
 setnames(set_cancer_rates, "rate", "metastasis_mu")
 
-cesa$samples <- cesa$samples %>%
-  left_join(consistent_samples %>% select(Unique_Patient_Identifier, Sample_type), by = "Unique_Patient_Identifier")
-
 for(comp_ind in 1:length(compound)){
   
   this_comp <- compound[comp_ind, ]
