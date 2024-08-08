@@ -5,6 +5,7 @@ library(dplyr)
 library(ces.refset.hg19)
 library(stringr)
 library(ggrepel)
+library(patchwork)
 
 # Set Working Directory
 setwd("/Users/andrew/Desktop/Summer/Project/Code")
@@ -215,4 +216,53 @@ for(comp_ind in 1:length(compound)){
   
 }
 
-plot_effects(effects = cesa$selection$ARID1A, group_by = "variant")
+### Making the figure:
+# selecting necessary data
+selection_data_primary_Metastasis <- rbindlist(cesa$selection)
+
+# reformatting data set
+selection_data_primary_Metastasis <- selection_data_primary_Metastasis |> 
+  select(variant_name, starts_with("si"), starts_with("ci")) |>
+  pivot_longer(cols = -variant_name, names_to = "data_type") |>
+  mutate(stage = stringr::word(string = data_type, sep = "_",start = -1)) |>
+  mutate(variant_name = stringr::str_remove(variant_name, "\\.1")) |>
+  mutate(si_or_ci = stringr::word(string = data_type, sep = "_",start = 1, end=3)) |>
+  mutate( si_or_ci = case_when(is.na(si_or_ci) ~ "si", TRUE ~ si_or_ci)) |>
+  mutate (value = case_when (is.na(value)~0, TRUE~value))
+
+# pivoting data set to create columns for gene, stage, si, and CIs
+selection_data_primary_Metastasis <- selection_data_primary_Metastasis|> 
+  select(-data_type) |>
+  pivot_wider(values_from = value, names_from = si_or_ci)
+
+# defining stages to be plotted
+selection_data_primary_Metastasis$stage <- factor(selection_data_primary_Metastasis$stage, levels = c("Primary","Metastasis"))
+
+# Separate data for primary and metastasis
+primary_data <- selection_data_primary_Metastasis %>% filter(stage == "Primary")
+metastasis_data <- selection_data_primary_Metastasis %>% filter(stage == "Metastasis")
+
+# Plot for primary samples
+primary_plot <- ggplot(primary_data, aes(y = variant_name, x = si)) +
+  geom_point(aes(color = "Selection Intensity"), show.legend = TRUE) +
+  geom_errorbarh(aes(xmin = ci_low_95, xmax = ci_high_95, color = "Confidence Interval"), height = 0.2, show.legend = TRUE) +
+  scale_color_manual(name = "Legend", values = c("Selection Intensity" = "red", "Confidence Interval" = "black")) +
+  labs(title = "Primary Samples", y = "Gene", x = "Cancer Effect (Scaled Selection Coefficient)") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(hjust = 1))
+
+# Plot for metastasis samples
+metastasis_plot <- ggplot(metastasis_data, aes(y = variant_name, x = si)) +
+  geom_point(aes(color = "Selection Intensity"), show.legend = TRUE) +
+  geom_errorbarh(aes(xmin = ci_low_95, xmax = ci_high_95, color = "Confidence Interval"), height = 0.2, show.legend = TRUE) +
+  scale_color_manual(name = "Legend", values = c("Selection Intensity" = "red", "Confidence Interval" = "black")) +
+  labs(title = "Metastasis Samples", y = "Gene", x = "Cancer Effect (Scaled Selection Coefficient)") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(hjust = 1))
+
+# Combine plots
+combined_plot <- primary_plot / metastasis_plot + 
+  plot_layout(guides = 'collect')
+
+# Plotting
+print(combined_plot)
