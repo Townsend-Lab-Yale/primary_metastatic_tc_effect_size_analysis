@@ -259,4 +259,26 @@ for(comp_ind in 1:length(compound)){
 }
 
 
+### Making the figure:
+# selecting necessary data
+selection_data_primary_Metastasis <- rbindlist(cesa$selection)
+
+# reformatting data set
+selection_data_primary_Metastasis <- selection_data_primary_Metastasis |> 
+  select(variant_name, starts_with("si"), starts_with("ci")) |>
+  pivot_longer(cols = -variant_name, names_to = "data_type") |>
+  mutate(stage = stringr::word(string = data_type, sep = "_",start = -1)) |>
+  mutate(variant_name = stringr::str_remove(variant_name, "\\.1")) |>
+  mutate(si_or_ci = stringr::word(string = data_type, sep = "_",start = 1, end=3)) |>
+  mutate( si_or_ci = case_when(is.na(si_or_ci) ~ "si", TRUE ~ si_or_ci)) |>
+  mutate (value = case_when (is.na(value)~0, TRUE~value))
+
+# pivoting data set to create columns for gene, stage, si, and CIs
+selection_data_primary_Metastasis <- selection_data_primary_Metastasis|> 
+  select(-data_type) |>
+  pivot_wider(values_from = value, names_from = si_or_ci)
+
+# defining stages to be plotted
+selection_data_primary_Metastasis$stage <- factor(selection_data_primary_Metastasis$stage, levels = c("Primary","Metastasis"))
+
 
