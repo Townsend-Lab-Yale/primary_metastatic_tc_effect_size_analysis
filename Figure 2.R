@@ -10,7 +10,6 @@ library(patchwork)
 # Set Working Directory
 setwd("/Users/andrew/Desktop/Summer/Project/Code")
 
-
 Sample_Information <- read.delim("Sample_Information.txt")
 
 setnames(Sample_Information, "Sample.type", "Sample_type")
@@ -68,7 +67,7 @@ tcga_maf <- preload_maf(maf = tcga_maf_file,
                         refset = "ces.refset.hg19")
 
 # Loading Genie Data ----
-genie <- fread("GENIE_Mutation_Data.txt")
+genie <- fread("GENIE.txt")
 genie_clinical <- fread("GENIE_Clinical.txt", skip = 4)
 setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
 genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` == "Thyroid Cancer")
@@ -238,6 +237,35 @@ selection_data_primary_Metastasis <- selection_data_primary_Metastasis|>
 # defining stages to be plotted
 selection_data_primary_Metastasis$stage <- factor(selection_data_primary_Metastasis$stage, levels = c("Primary","Metastasis"))
 
+### Making the Figure:
+
+variant_order <- c("TP53", "PIK3CA", "TERT", "NF1", "NF2", "NRAS", "BRAF", "CDKN2A", "CDKN2B", 
+                   "NKX2-1","RET", "KMT2C", "KMT2D", "BCOR", "TBX3", "PTEN", "EIF1AX", "RBM10", 
+                   "ATM", "ARID1A") 
+stage_order <- c("Primary", "Metastasis")
+selection_data_primary_Metastasis$stage <- factor(selection_data_primary_Metastasis$stage, levels = stage_order)
+
+library(scales)
+library(stringr)
+library(dplyr)
+library(ggplot2)
+
+Figure_stage <- ggplot(selection_data_primary_Metastasis, aes(x = stage, y = si, color = stage, linetype = stage)) + 
+  geom_point(size = 1.5) + 
+  geom_errorbar(aes(ymin = ci_low_95, ymax = ci_high_95), width = .5) +
+  facet_wrap(~ factor(variant_name, levels = variant_order), scales = "free_y", ncol = 4) + 
+  theme_bw() + xlab("") + ylab("Cancer effect size") +
+  theme(legend.position = "bottom", legend.title = element_blank(), axis.text.x = element_blank(), legend.text = element_text(size = 12)) +
+  scale_y_continuous(labels = scientific) +
+  theme(text = element_text(size = 12)) +  
+  expand_limits(y = 0) +
+  scale_linetype_manual(values = c(rep("solid", 1), rep("solid", 1))) +
+  scale_color_manual(values = c("red", "blue")) +
+  scale_x_discrete(breaks = selection_data_primary_Metastasis$stage, labels = selection_data_primary_Metastasis$stage)
+
+ggsave("Figure_stage.png", plot = Figure_stage, width = 8, height = 9)
+
+# ----
 # Separate data for primary and metastasis
 primary_data <- selection_data_primary_Metastasis %>% filter(stage == "Primary")
 metastasis_data <- selection_data_primary_Metastasis %>% filter(stage == "Metastasis")
