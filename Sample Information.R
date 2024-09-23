@@ -32,7 +32,7 @@ if (!file.exists(tcga_maf_file)) {
 }
 
 tcga_clinical <- fread("TCGA_Clinical.txt")
-setnames(tcga_clinical, "case_id", "Unique_Patient_Identifier")
+setnames(tcga_clinical, "case_submitter_id", "Unique_Patient_Identifier")
 
 names(tcga_clinical)[which(names(tcga_clinical) == "residual_disease")[2]] <- "residual_disease_2"
 
