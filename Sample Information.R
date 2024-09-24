@@ -94,6 +94,9 @@ sample_info$`Sample type`[sample_info$`Sample type` == "MX" |
                             sample_info$`Sample type` == "Unspecified" |
                             sample_info$`Sample type` == "Not Collected"] <- NA
 
+sample_info <- sample_info %>%
+  filter(!is.na(`Sample type`))
+
 duplicates <- sample_info %>% group_by(`Unique_Patient_Identifier`) %>%
   filter(n_distinct(`Sample type`) > 1) %>% pull(`Unique_Patient_Identifier`) %>% unique()
 
