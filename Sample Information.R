@@ -32,7 +32,7 @@ if (!file.exists(tcga_maf_file)) {
 }
 
 tcga_clinical <- fread("TCGA_Clinical.txt")
-setnames(tcga_clinical, "case_id", "Unique_Patient_Identifier")
+setnames(tcga_clinical, "case_submitter_id", "Unique_Patient_Identifier")
 
 names(tcga_clinical)[which(names(tcga_clinical) == "residual_disease")[2]] <- "residual_disease_2"
 
@@ -109,6 +109,9 @@ sample_info$`Sample type`[sample_info$`Sample type` == "MX" |
                             sample_info$`Sample type` == "Not Applicable or Heme" |
                             sample_info$`Sample type` == "Unspecified" |
                             sample_info$`Sample type` == "Not Collected"] <- NA
+
+sample_info <- sample_info %>%
+  filter(!is.na(`Sample type`))
 
 duplicates <- sample_info %>% group_by(`Unique_Patient_Identifier`) %>%
   filter(n_distinct(`Sample type`) > 1) %>% pull(`Unique_Patient_Identifier`) %>% unique()
