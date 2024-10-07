@@ -49,25 +49,37 @@ genie_sample <- unique(genie_clinical$SAMPLE_ID)
 genie_maf <- preload_maf(maf = genie, refset = "ces.refset.hg19")
 genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(genie_sample))
 
+# Load more Metastasis Data ----
+metastasis_1 <- read_excel("Supp_Table3.xlsx", skip = 28)
+metastasis_1$Chromosome <- str_sub(metastasis_1$Chr, 4)
+meta1_maf <- preload_maf(maf = metastasis_1, refset = "ces.refset.hg19", 
+                      sample_col = "#CaseID",  start_col = "Start",
+                      ref_col = "Ref", tumor_allele_col = "Alt",
+                      keep_extra_columns =  TRUE)
+
 # Keep samples where column Problem is equal to NA:
 tc_maf <- tc_maf %>% filter(is.na(problem))
 tcga_maf <- tcga_maf %>% filter(is.na(problem))
 genie_maf <- genie_maf %>% filter(is.na(problem))
+meta1_maf <- meta1_maf %>% filter(is.na(problem))
 
 # keeping only samples that do not occur at germline variant sites:
 tc_maf <- tc_maf %>% filter (`germline_variant_site` == FALSE)
 tcga_maf <- tcga_maf %>% filter (`germline_variant_site` == FALSE)
 genie_maf <- genie_maf %>% filter (`germline_variant_site` == FALSE)
+meta1_maf <- meta1_maf %>% filter (`germline_variant_site` == FALSE)
 
 # keeping only samples that do not occur in repetitive regions 
 tc_maf <- tc_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
 tcga_maf <- tcga_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
 genie_maf <- genie_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
+meta1_maf <- meta1_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
 
 # keeping snv:
 tc_maf <- subset(tc_maf, variant_type == "snv")
 tcga_maf <- subset(tcga_maf, variant_type == "snv")
 genie_maf <- subset(genie_maf, variant_type == "snv")
+meta1_maf <- subset(meta1_maf, variant_type == "snv")
 
 # TXT File - Column 1: Sample ID | Column 2: Primary / Metastasis ----
 sample_info <- tc_maf %>% select(`Unique_Patient_Identifier`, `Sample type`)
@@ -85,6 +97,10 @@ genie_full <- genie_full %>% select(`Unique_Patient_Identifier`, `SAMPLE_TYPE`)
 setnames(genie_full, "SAMPLE_TYPE", "Sample type", skip_absent=TRUE)
 
 sample_info <- rbind(sample_info, genie_full)
+
+meta1_maf$`Sample type` <- "Metastasis"
+meta1_maf <- meta1_maf %>% select(Unique_Patient_Identifier, `Sample type`)
+sample_info <- rbind(sample_info, meta1_maf)
 
 sample_info$`Sample type`[sample_info$`Sample type` == "M0"] <- "Primary"
 sample_info$`Sample type`[sample_info$`Sample type` == "M1"] <- "Metastasis"

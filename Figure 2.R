@@ -49,7 +49,8 @@ paper_tc_data <- fread("Paper_TC_Data.txt", skip = 1)
 # Refset determined using IGV
 tc_maf <- preload_maf(maf = paper_tc_data, refset = "ces.refset.hg19", 
                       sample_col = "Sample ID",  start_col = "Position",
-                      ref_col = "Reference", tumor_allele_col = "Alternate")
+                      ref_col = "Reference", tumor_allele_col = "Alternate", 
+                      keep_extra_columns =  TRUE)
 
 # Loading TCGA Data ----
 tcga_maf_file <- "TCGA-THCA.maf.gz"
@@ -67,7 +68,7 @@ tcga_maf <- preload_maf(maf = tcga_maf_file,
                         refset = "ces.refset.hg19")
 
 # Loading Genie Data ----
-genie <- fread("GENIE.txt")
+genie <- fread("GENIE_Mutation_Data.txt")
 genie_clinical <- fread("GENIE_Clinical.txt", skip = 4)
 setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
 genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` == "Thyroid Cancer")
@@ -75,25 +76,37 @@ genie_sample <- unique(genie_clinical$SAMPLE_ID)
 genie_maf <- preload_maf(maf = genie, refset = "ces.refset.hg19")
 genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(genie_sample))
 
+# Load more Metastasis Data ----
+metastasis_1 <- read_excel("Supp_Table3.xlsx", skip = 28)
+metastasis_1$Chromosome <- str_sub(metastasis_1$Chr, 4)
+meta1_maf <- preload_maf(maf = metastasis_1, refset = "ces.refset.hg19", 
+                         sample_col = "#CaseID",  start_col = "Start",
+                         ref_col = "Ref", tumor_allele_col = "Alt",
+                         keep_extra_columns =  TRUE)
+
 # Keep samples where column Problem is equal to NA:
 tc_maf <- tc_maf %>% filter(is.na(problem))
 tcga_maf <- tcga_maf %>% filter(is.na(problem))
 genie_maf <- genie_maf %>% filter(is.na(problem))
+meta1_maf <- meta1_maf %>% filter(is.na(problem))
 
 # keeping only samples that do not occur at germline variant sites:
 tc_maf <- tc_maf %>% filter (`germline_variant_site` == FALSE)
 tcga_maf <- tcga_maf %>% filter (`germline_variant_site` == FALSE)
 genie_maf <- genie_maf %>% filter (`germline_variant_site` == FALSE)
+meta1_maf <- meta1_maf %>% filter (`germline_variant_site` == FALSE)
 
 # keeping only samples that do not occur in repetitive regions 
 tc_maf <- tc_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
 tcga_maf <- tcga_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
 genie_maf <- genie_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
+meta1_maf <- meta1_maf %>% filter (`repetitive_region` == FALSE | cosmic_site_tier %in% 1:3)
 
 # keeping snv:
 tc_maf <- subset(tc_maf, variant_type == "snv")
 tcga_maf <- subset(tcga_maf, variant_type == "snv")
 genie_maf <- subset(genie_maf, variant_type == "snv")
+meta1_maf <- subset(meta1_maf, variant_type == "snv")
 
 # 3. CESAnalysis Creation and General Results ----
 ###creating CESAnalysis and loading data 
@@ -114,6 +127,7 @@ cesa <- load_maf(cesa = cesa, maf = tcga_maf, coverage = "genome", maf_name = "T
 cesa <- load_maf(cesa, maf = genie_maf, maf_name = "Genie_THCA", coverage = "targeted",
                  covered_regions = tgs_coverage, covered_regions_name = "top_genes",
                  covered_regions_padding = 10)
+cesa <- load_maf(cesa, maf = meta1_maf, coverage = "exome", maf_name = "Meta1")
 
 # Loading Clinical Data
 cesa <- load_sample_data(cesa, tcga_clinical)
@@ -264,33 +278,3 @@ Figure_stage <- ggplot(selection_data_primary_Metastasis, aes(x = stage, y = si,
   scale_x_discrete(breaks = selection_data_primary_Metastasis$stage, labels = selection_data_primary_Metastasis$stage)
 
 ggsave("Figure_stage.png", plot = Figure_stage, width = 8, height = 9)
-
-# ----
-# Separate data for primary and metastasis
-primary_data <- selection_data_primary_Metastasis %>% filter(stage == "Primary")
-metastasis_data <- selection_data_primary_Metastasis %>% filter(stage == "Metastasis")
-
-# Plot for primary samples
-primary_plot <- ggplot(primary_data, aes(y = variant_name, x = si)) +
-  geom_point(aes(color = "Selection Intensity"), show.legend = TRUE) +
-  geom_errorbarh(aes(xmin = ci_low_95, xmax = ci_high_95, color = "Confidence Interval"), height = 0.2, show.legend = TRUE) +
-  scale_color_manual(name = "Legend", values = c("Selection Intensity" = "red", "Confidence Interval" = "black")) +
-  labs(title = "Primary Samples", y = "Gene", x = "Cancer Effect (Scaled Selection Coefficient)") +
-  theme_minimal() +
-  theme(axis.text.y = element_text(hjust = 1))
-
-# Plot for metastasis samples
-metastasis_plot <- ggplot(metastasis_data, aes(y = variant_name, x = si)) +
-  geom_point(aes(color = "Selection Intensity"), show.legend = TRUE) +
-  geom_errorbarh(aes(xmin = ci_low_95, xmax = ci_high_95, color = "Confidence Interval"), height = 0.2, show.legend = TRUE) +
-  scale_color_manual(name = "Legend", values = c("Selection Intensity" = "red", "Confidence Interval" = "black")) +
-  labs(title = "Metastasis Samples", y = "Gene", x = "Cancer Effect (Scaled Selection Coefficient)") +
-  theme_minimal() +
-  theme(axis.text.y = element_text(hjust = 1))
-
-# Combine plots
-combined_plot <- primary_plot / metastasis_plot + 
-  plot_layout(guides = 'collect')
-
-# Plotting
-print(combined_plot)
