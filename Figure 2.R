@@ -132,7 +132,7 @@ cesa <- load_maf(cesa, maf = meta1_maf, coverage = "exome", maf_name = "Meta1")
 # Loading Clinical Data
 cesa <- load_sample_data(cesa, tcga_clinical)
 cesa <- load_sample_data(cesa, genie_clinical)
-cesa <- load_sample_data(cesa, Sample_type)
+cesa <- load_sample_data(cesa, Sample_Information)
 
 #defining groups:
 primary_samples <- consistent_samples[consistent_samples$Sample_type == "Primary", ]
@@ -277,38 +277,4 @@ Figure_stage <- ggplot(selection_data_primary_Metastasis, aes(x = stage, y = si,
   scale_color_manual(values = c("red", "blue")) +
   scale_x_discrete(breaks = selection_data_primary_Metastasis$stage, labels = selection_data_primary_Metastasis$stage)
 
-<<<<<<< HEAD
 ggsave("Figure_stage.png", plot = Figure_stage, width = 8, height = 9)
-=======
-ggsave("Figure_stage.png", plot = Figure_stage, width = 8, height = 9)
-
-# ----
-# Separate data for primary and metastasis
-primary_data <- selection_data_primary_Metastasis %>% filter(stage == "Primary")
-metastasis_data <- selection_data_primary_Metastasis %>% filter(stage == "Metastasis")
-
-# Plot for primary samples
-primary_plot <- ggplot(primary_data, aes(y = variant_name, x = si)) +
-  geom_point(aes(color = "Selection Intensity"), show.legend = TRUE) +
-  geom_errorbarh(aes(xmin = ci_low_95, xmax = ci_high_95, color = "Confidence Interval"), height = 0.2, show.legend = TRUE) +
-  scale_color_manual(name = "Legend", values = c("Selection Intensity" = "red", "Confidence Interval" = "black")) +
-  labs(title = "Primary Samples", y = "Gene", x = "Cancer Effect (Scaled Selection Coefficient)") +
-  theme_minimal() +
-  theme(axis.text.y = element_text(hjust = 1))
-
-# Plot for metastasis samples
-metastasis_plot <- ggplot(metastasis_data, aes(y = variant_name, x = si)) +
-  geom_point(aes(color = "Selection Intensity"), show.legend = TRUE) +
-  geom_errorbarh(aes(xmin = ci_low_95, xmax = ci_high_95, color = "Confidence Interval"), height = 0.2, show.legend = TRUE) +
-  scale_color_manual(name = "Legend", values = c("Selection Intensity" = "red", "Confidence Interval" = "black")) +
-  labs(title = "Metastasis Samples", y = "Gene", x = "Cancer Effect (Scaled Selection Coefficient)") +
-  theme_minimal() +
-  theme(axis.text.y = element_text(hjust = 1))
-
-# Combine plots
-combined_plot <- primary_plot / metastasis_plot + 
-  plot_layout(guides = 'collect')
-
-# Plotting
-print(combined_plot)
->>>>>>> a1105f699a9464e7c4cb52d1279aaa7a7435c155

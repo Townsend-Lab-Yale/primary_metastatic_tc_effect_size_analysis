@@ -13,33 +13,6 @@ Sample_Information <- read.delim("Sample_Information.txt")
 
 setnames(Sample_Information, "Sample.type", "Sample_type")
 
-# Keep only rows with "Primary" and "Metastasis":
-filtered_samples <- Sample_Information %>% 
-  filter(Sample_type %in% c("Primary", "Metastasis"))
-
-# Remove duplicates based on "Unique_Patient_Identifier":
-Sample_type <- filtered_samples %>% 
-  distinct(Unique_Patient_Identifier, .keep_all = TRUE)
-
-# Check for consistency in "Sample_type" for each "Unique_Patient_Identifier"
-consistent_samples <- filtered_samples %>% 
-  group_by(Unique_Patient_Identifier) %>% 
-  filter(n_distinct(Sample_type) == 1) %>% 
-  ungroup() %>% 
-  distinct(Unique_Patient_Identifier, .keep_all = TRUE)
-
-# Identify inconsistent samples
-inconsistent_samples <- filtered_samples %>% 
-  group_by(Unique_Patient_Identifier) %>% 
-  filter(n_distinct(Sample_type) > 1) %>% 
-  ungroup()
-
-print("Consistent samples:")
-print(consistent_samples)
-
-print("Inconsistent samples:")
-print(inconsistent_samples)
-
 ## preparing the data
 # Paper Data
 
@@ -131,7 +104,7 @@ cesa <- load_maf(cesa, maf = meta1_maf, coverage = "exome", maf_name = "Meta1")
 # Loading Clinical Data
 cesa <- load_sample_data(cesa, tcga_clinical)
 cesa <- load_sample_data(cesa, genie_clinical)
-cesa <- load_sample_data(cesa, Sample_type)
+cesa <- load_sample_data(cesa, Sample_Information)
 
 # We'll use all suggested exclusions (TCGA primary tumors are treatment-naive)
 signature_exclusions <- suggest_cosmic_signature_exclusions(cancer_type = "THCA",

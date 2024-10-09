@@ -124,17 +124,4 @@ sample_info <- sample_info %>% distinct(Unique_Patient_Identifier, .keep_all = T
 filtered_samples <- sample_info %>% 
   filter(`Sample type` %in% c("Primary", "Metastasis"))
 
-# Check for consistency in "Sample_type" for each "Unique_Patient_Identifier"
-consistent_samples <- filtered_samples %>% 
-  group_by(Unique_Patient_Identifier) %>% 
-  filter(n_distinct(`Sample type`) == 1) %>% 
-  ungroup() %>% 
-  distinct(Unique_Patient_Identifier, .keep_all = TRUE)
-
-# Identify inconsistent samples
-inconsistent_samples <- filtered_samples %>% 
-  group_by(Unique_Patient_Identifier) %>% 
-  filter(n_distinct(`Sample type`) > 1) %>% 
-  ungroup()
-
 write.xlsx(sample_info, file = "Sample Information.xlsx")
