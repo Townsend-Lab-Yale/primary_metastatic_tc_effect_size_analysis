@@ -43,9 +43,9 @@ tcga_maf <- preload_maf(maf = tcga_maf_file,
 # Loading Genie Data ----
 genie <- fread("GENIE_Mutation_Data.txt")
 genie_clinical <- fread("GENIE_Clinical.txt", skip = 4)
-setnames(genie_clinical, "PATIENT_ID", "Unique_Patient_Identifier")
+setnames(genie_clinical, "SAMPLE_ID", "Unique_Patient_Identifier")
 genie_clinical <- genie_clinical %>% filter(`CANCER_TYPE` == "Thyroid Cancer")
-genie_sample <- unique(genie_clinical$SAMPLE_ID)
+genie_sample <- unique(genie_clinical$Unique_Patient_Identifier)
 genie_maf <- preload_maf(maf = genie, refset = "ces.refset.hg19")
 genie_maf <- genie_maf %>% filter(`Unique_Patient_Identifier` %in% c(genie_sample))
 
