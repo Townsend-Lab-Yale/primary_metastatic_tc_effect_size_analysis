@@ -64,6 +64,10 @@ tcga_maf <- preload_maf(maf = tcga_maf_file,
 
 # Loading Genie Data ----
 genie <- fread("GENIE_Mutation_Data.txt")
+genie <- genie[, .(Hugo_Symbol, Chromosome, Start_Position, End_Position, Variant_Classification, 
+                   Variant_Type, Reference_Allele, Tumor_Seq_Allele1, Tumor_Seq_Allele2, 
+                   dbSNP_RS, Tumor_Sample_Barcode)]
+genie <- genie %>% filter(`Variant_Type` == "SNP")
 genie_maf <- preload_maf(maf = genie, refset = "ces.refset.hg19")
 
 
