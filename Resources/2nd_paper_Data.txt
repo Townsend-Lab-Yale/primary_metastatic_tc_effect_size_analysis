@@ -1,0 +1,657 @@
+Unique_Patient_Identifier	#CaseID	Tissue Type	Therapy	Chr	Start	End	Ref	Alt	T_Ref_count	T_Alt_count	T-VAF	Gene	CCF	Clonality	Pathogenecity	Cancer Gene	CHASM_clasiification	Provean	FATHMM	MutationTaster	Mutation Type	Tumor purity	Validation	Status
+Case12_Primary	Case12	Primary	Naïve	chr18	210462	210462	T	C	11	17	0.61	USP14	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr18	210462	210462	T	C	21	9	0.30	USP14	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr20	278666	278666	G	T	11	17	0.61	ZCCHC3	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.54	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr16	309484	309484	A	G	11	5	0.31	ITFG3	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr16	309484	309484	A	G	21	15	0.42	ITFG3	1	clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.28	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr20	334055	334055	G	A	39	4	0.09	NRSN2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.67	No validation	
+Case3_Primary	Case3	Primary	Naïve	chr19	407306	407306	C	T	56	15	0.21	C2CD4C	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.44	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr5	427978	427978	G	A	26	24	0.48	AHRR	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr11	533874	533874	T	C	11	17	0.61	HRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.54	Sanger	Validated
+Case12_Metastasis	Case12	Metastasis	Naïve	chr11	533874	533874	T	C	21	9	0.30	HRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.58	Sanger	Validated
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr11	533875	533875	G	T	65	42	0.39	HRAS	1	Clonal	Likely pathogenic	TRUE	Driver	NA	Damaging	disease_causing	Missense	0.86	Sanger	Validated
+Case4_Metastasis	Case4	Metastasis	Naïve	chr19	1008748	1008748	G	A	32	32	0.50	GRIN3B	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.82	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr12	1017726	1017726	C	T	45	64	0.59	WNK1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr12	1017726	1017726	C	T	44	34	0.44	WNK1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.79	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr19	1043829	1043829	G	A	101	7	0.06	ABCA7	0.48	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.84	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr5	1053545	1053545	C	T	47	26	0.36	SLC12A7	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr5	1053545	1053545	C	T	29	11	0.28	SLC12A7	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr1	1178442	1178442	G	A	85	5	0.06	FAM132A	0.57	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr11	1272821	1272821	G	A	22	14	0.39	MUC5B	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.5	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr10	1279741	1279741	C	G	47	26	0.36	ADARB2	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr19	1461036	1461036	G	A	29	11	0.28	APC2	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr4	1713945	1713945	G	A	7	7	0.50	SLBP	1	Subclonal	Indeterminate	FALSE	NA	Neutral	NA	polymorphism	unknown	0.76	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr4	1962801	1962801	G	A	26	24	0.48	WHSC1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.39	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr20	2083864	2083864	T	C	11	17	0.61	STK35	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr19	2109114	2109114	G	A	32	32	0.50	AP3D1	0.21	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.82	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr11	2330594	2330594	T	G	30	4	0.12	TSPAN32	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr3	3095572	3095572	G	A	47	26	0.36	CNTN4	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr10	3141496	3141496	A	G	11	17	0.61	PFKP	1	Clonal	Synonymous	FALSE	NA	NA	Tolerated	disease_causing	synonymous	0.54	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr1	3321351	3321351	C	T	75	5	0.06	PRDM16	0.69	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr1	3395097	3395097	G	A	39	4	0.09	ARHGEF16	0.93	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	1	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr16	3614437	3614437	G	A	45	64	0.59	NLRC3	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr17	3629160	3629160	G	A	11	17	0.61	GSG2	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr17	3629160	3629160	G	A	21	9	0.30	GSG2	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr3	3887575	3887575	A	G	11	17	0.61	LRRN1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr4	4199174	4199174	C	T	54	5	0.08	OTOP1	0.87	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr4	4199266	4199266	G	A	30	4	0.12	OTOP1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.49	No validation	
+Case2_Primary	Case2	Primary	Post Rx	chr4	4199711	4199711	T	C	32	4	0.11	OTOP1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.84	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr4	4199777	4199777	C	T	54	5	0.08	OTOP1	0.85	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr4	4317607	4317607	G	A	45	64	0.59	ZBTB49	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr4	4317607	4317607	G	A	44	34	0.44	ZBTB49	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr17	4792994	4792994	G	A	32	32	0.50	MINK1	0.2	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.82	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr17	4936855	4936855	C	T	30	28	0.48	SLC52A1	0.85	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr3	5023088	5023088	C	G	47	26	0.36	BHLHE40	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case1_Primary	Case1	Primary	Naïve	chr4	5642492	5642492	T	A	39	4	0.09	EVC2	1	Clonal	Likely pathogenic	FALSE	Passenger	NA	Damaging	disease_causing	Missense	1	Sanger	Validated
+Case1_Metastasis	Case1	Metastasis	Naïve	chr4	5642492	5642492	T	A	28	6	0.18	EVC2	1	Clonal	Likely pathogenic	FALSE	Passenger	NA	Damaging	disease_causing	Missense	0.91	Sanger	Validated
+Case6_Metastasis	Case6	Metastasis	Naïve	chr10	5969445	5969445	C	T	30	28	0.48	FBXO18	0.91	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr12	6153554	6153554	C	T	26	21	0.45	VWF	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.86	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr11	6530217	6530217	T	C	26	21	0.45	DNHD1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.86	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr12	6686968	6686968	G	C	29	11	0.28	CHD4	1	Clonal	Likely pathogenic	TRUE	Passenger	Neutral	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case12_Primary	Case12	Primary	Naïve	chr19	6718322	6718322	G	T	11	17	0.61	C3	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr19	6750590	6750590	G	A	47	26	0.36	TRIP10	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr12	6924002	6924002	C	T	29	11	0.28	CD4	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.36	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr17	7399277	7399277	G	A	75	5	0.06	POLR2A	0.62	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr17	7574003	7574003	G	A	45	64	0.59	TP53	1	Clonal	Likely pathogenic	TRUE	NA	NA	NA	disease_causing	stopgain	0.56	Sanger	Validated
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr17	7577539	7577539	G	A	29	11	0.28	TP53	1	Subclonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case10_Metastasis	Case10	Metastasis	Naïve	chr17	7578211	7578211	C	T	44	34	0.44	TP53	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.79	Sanger	Not validated
+Case10_Primary	Case10	Primary	Naïve	chr17	7578535	7578535	T	C	45	64	0.59	TP53	0.76	Subclonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.56	Sanger	Not validated
+Case6_Metastasis	Case6	Metastasis	Naïve	chr19	7712364	7712364	A	G	30	28	0.48	STXBP2	0.71	Subclonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr16	7759079	7759079	C	T	85	5	0.06	RBFOX1	1	Subclonal	Synonymous	FALSE	NA	NA	Tolerated	disease_causing	synonymous	0.65	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr11	7847391	7847391	G	T	44	34	0.44	OR5P3	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr11	7847392	7847392	A	T	44	34	0.44	OR5P3	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.79	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr19	8176530	8176530	A	C	11	5	0.31	FBN3	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.78	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr4	8442634	8442634	G	C	26	24	0.48	TRMT44	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.39	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr11	8747715	8747715	A	G	54	5	0.08	ST5	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr11	8747715	8747715	A	G	85	5	0.06	ST5	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr19	9071755	9071755	T	C	54	5	0.08	MUC16	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	NA	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr19	9071755	9071755	T	C	85	5	0.06	MUC16	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	NA	Missense	0.65	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr1	9074847	9074847	C	T	32	32	0.50	SLC2A7	0.13	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.82	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr1	9083117	9083117	G	A	65	42	0.39	SLC2A7	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr18	9886918	9886918	A	G	54	5	0.08	TXNDC2	0.6	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr8	10467702	10467702	T	C	22	14	0.39	RP1L1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr8	10467702	10467702	T	C	71	4	0.05	RP1L1	0.5	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr2	10584687	10584687	G	A	32	32	0.50	ODC1	0.65	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.82	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr8	10689192	10689192	T	C	11	17	0.61	PINX1;SOX7	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr19	12775657	12775657	C	T	44	34	0.44	MAN2B1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.79	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr9	13138078	13138078	A	C	65	42	0.39	MPDZ	0.9	Subclonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.86	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr20	13273078	13273078	A	T	22	14	0.39	ISM1	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr20	13273078	13273078	A	T	71	4	0.05	ISM1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.48	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr4	13545640	13545640	G	A	22	14	0.39	NKX3-2	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr4	13545640	13545640	G	A	71	4	0.05	NKX3-2	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr11	13721929	13721929	A	C	11	17	0.61	FAR1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr19	15349979	15349979	C	T	75	5	0.06	BRD4	0.74	Subclonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.64	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr10	15559182	15559182	G	T	26	21	0.45	ITGA8	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.86	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr6	15627572	15627572	A	C	45	64	0.59	DTNBP1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.56	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr19	16436126	16436126	G	A	47	26	0.36	KLF2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr5	16779739	16779739	G	A	54	5	0.08	MYO10	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chrX	16875775	16875775	T	C	30	28	0.48	RBBP7	1	clonal	Likely pathogenic	FALSE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.36	Sanger	Validated
+Case6_Primary	Case6	Primary	Naïve	chrX	16875775	16875775	T	C	51	28	0.35	RBBP7	NA	NA	Likely pathogenic	FALSE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.53	Sanger	Not validated
+Case2_Primary	Case2	Primary	Post Rx	chr19	16965056	16965056	G	A	32	4	0.11	SIN3B	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.84	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr1	17296947	17296947	A	G	11	17	0.61	CROCC	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr19	17397485	17397485	G	T	21	15	0.42	ANKLE1	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr1	17431446	17431446	C	T	44	34	0.44	PADI2	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.79	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr11	17449895	17449895	C	T	65	42	0.39	ABCC8	1	Clonal	Likely Passenger	FALSE	Passenger	NA	Damaging	polymorphism	Missense	0.86	No validation	
+Case3_Primary	Case3	Primary	Naïve	chr11	17517180	17517180	C	T	56	15	0.21	USH1C	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.44	No validation	
+Case2_Primary	Case2	Primary	Post Rx	chr19	18779754	18779754	G	A	32	4	0.11	KLHL26	0.48	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.84	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr19	19136516	19136516	C	A	7	7	0.50	SUGP2	0.92	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.76	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr16	19194943	19194943	C	T	29	11	0.28	SYT17	0.94	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr8	19363042	19363042	C	G	47	26	0.36	CSGALNACT1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr22	19776143	19776143	A	T	45	64	0.59	GNB1L	1	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	stoploss	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr22	19776143	19776143	A	T	44	34	0.44	GNB1L	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stoploss	0.79	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr22	19918589	19918589	C	T	22	14	0.39	TXNRD2	1	Subclonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.5	Sanger	Validated
+Case9_Primary	Case9	Primary	Post Rx	chr16	20753230	20753230	A	G	30	4	0.12	THUMPD1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr16	20753230	20753230	A	G	37	25	0.40	THUMPD1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr14	20840910	20840910	G	A	101	7	0.06	TEP1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.84	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr14	21108949	21108949	T	A	11	5	0.31	OR6S1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr14	21108949	21108949	T	A	21	15	0.42	OR6S1	1	clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.28	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr17	21199072	21199072	C	T	51	28	0.35	MAP2K3	0.97	Clonal	Indeterminate	FALSE	NA	Deleterious	NA	polymorphism	Missense	0.53	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr8	22064898	22064898	C	A	51	28	0.35	BMP1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr4	22422567	22422567	T	A	47	26	0.36	GPR125	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr8	22473539	22473539	C	T	39	4	0.09	KIAA1967	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.67	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr10	22618196	22618196	A	G	26	24	0.48	BMI1;COMMD3-BMI1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.39	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr10	23393150	23393150	A	T	65	42	0.39	MSRB2	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.86	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr14	23530601	23530601	G	A	11	5	0.31	ACIN1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr14	23530601	23530601	G	A	21	15	0.42	ACIN1	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr16	23695291	23695291	C	T	11	17	0.61	PLK1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr14	23790917	23790917	C	T	44	34	0.44	PABPN1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr7	23825170	23825170	G	A	65	42	0.39	STK31	0.92	Subclonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.86	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr15	23931494	23931494	G	A	101	7	0.06	NDN	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.84	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr22	24199684	24199684	A	G	11	17	0.61	SLC2A11	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr22	24199684	24199684	A	G	21	9	0.30	SLC2A11	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr4	24577923	24577923	C	T	85	5	0.06	DHX15	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.65	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr2	25464537	25464537	C	T	11	5	0.31	DNMT3A	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.78	Sanger	Validated
+Case14_Primary	Case14	Primary	Naïve	chr2	25464537	25464537	C	T	21	15	0.42	DNMT3A	1	clonal	Likely pathogenic	TRUE	Driver	NA	Damaging	disease_causing	Missense	0.28	Sanger	Validated
+Case13_Primary	Case13	Primary	Post Rx	chr2	26536314	26536314	G	A	47	26	0.36	GPR113	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr1	26608889	26608889	A	T	29	11	0.28	UBXN11	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr2	27016076	27016076	C	T	11	17	0.61	CENPA	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr2	27016076	27016076	C	T	21	9	0.30	CENPA	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.58	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr17	27076335	27076335	C	T	54	5	0.08	TRAF4	0.81	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr13	27250805	27250805	G	T	45	64	0.59	WASF3	1	Subclonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr13	27250805	27250805	G	T	44	34	0.44	WASF3	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr6	27368617	27368617	A	G	54	5	0.08	ZNF391	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr17	27614190	27614190	A	C	26	21	0.45	NUFIP2	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.86	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr16	27640036	27640036	G	C	85	5	0.06	KIAA0556	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr2	27715639	27715639	C	A	47	26	0.36	FNDC4	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr2	27715639	27715639	C	A	29	11	0.28	FNDC4	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr3	27760281	27760281	G	T	30	28	0.48	EOMES	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case6_Primary	Case6	Primary	Naïve	chr3	27760281	27760281	G	T	51	28	0.35	EOMES	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.53	Sanger	Not validated
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr13	28155738	28155738	T	A	37	25	0.40	LNX2	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.79	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr8	28575334	28575334	A	T	30	4	0.12	EXTL3	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr13	28963987	28963987	T	C	11	17	0.61	FLT1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr2	29295344	29295344	T	C	11	17	0.61	C2orf71	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr2	29295344	29295344	T	C	21	9	0.30	C2orf71	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr8	29963358	29963358	T	G	26	24	0.48	LEPROTL1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.39	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr22	30403939	30403939	G	A	51	28	0.35	MTMR3	0.55	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr7	30695230	30695230	A	G	47	26	0.36	CRHR2	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr20	30723899	30723899	G	A	32	32	0.50	TM9SF4	0.24	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.82	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr4	30725945	30725945	C	G	71	4	0.05	PCDH7	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr21	30963508	30963508	G	A	45	64	0.59	GRIK1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.56	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr15	31295095	31295095	G	A	39	4	0.09	TRPM1	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.67	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr6	31599480	31599480	G	C	47	26	0.36	PRRC2A	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr5	32088081	32088081	C	T	30	4	0.12	PDZD2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr5	32088081	32088081	C	T	37	25	0.40	PDZD2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr7	32609684	32609684	A	C	29	11	0.28	AVL9	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr14	32615480	32615480	G	A	101	7	0.06	ARHGAP5	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.84	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr9	32630324	32630324	C	A	11	17	0.61	TAF1L	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr9	32630324	32630324	C	A	21	9	0.30	TAF1L	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr6	32726772	32726772	G	A	101	7	0.06	HLA-DQB2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr6	33284647	33284647	G	A	26	21	0.45	ZBTB22	0.94	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.86	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr12	33559866	33559866	C	T	29	11	0.28	SYT10	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr6	33694644	33694644	G	A	39	4	0.09	IP6K3	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.67	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr1	34071573	34071573	T	C	21	9	0.30	CSMD2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	NA	Missense	0.58	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr9	35231190	35231190	G	T	51	28	0.35	UNC13B	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr9	35231190	35231190	G	T	30	28	0.48	UNC13B	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr9	35811473	35811473	G	A	71	4	0.05	SPAG8	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr13	35923281	35923281	T	C	30	28	0.48	NBEA	0.81	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr14	36004231	36004231	C	G	85	5	0.06	INSM2	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr1	36026011	36026011	C	T	47	26	0.36	NCDN	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr1	36026011	36026011	C	T	29	11	0.28	NCDN	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chrX	36065011	36065011	C	G	85	5	0.06	CHDC2	NA	NA	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.65	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr19	36123879	36123879	G	A	37	25	0.40	RBM42	0.63	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr4	36126501	36126501	G	T	37	25	0.40	ARAP2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr19	36501886	36501886	G	A	45	64	0.59	ALKBH6	1	Clonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr22	36653455	36653455	T	C	11	17	0.61	APOL1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr22	36653455	36653455	T	C	21	9	0.30	APOL1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.58	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr8	36793182	36793182	C	A	11	5	0.31	KCNU1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr8	36793182	36793182	C	A	21	15	0.42	KCNU1	1	clonal	Likely passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.28	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr17	37360433	37360433	C	G	7	7	0.50	RPL19	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr17	37360433	37360433	C	G	26	21	0.45	RPL19	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.86	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr9	37525110	37525110	C	A	85	5	0.06	FBXO10	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.65	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr6	37614071	37614071	G	A	37	25	0.40	MDGA1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chrX	37850195	37850195	G	A	85	5	0.06	CXorf27	NA	NA	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.65	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr17	38569171	38569171	T	A	85	5	0.06	TOP2A	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.65	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr17	38975245	38975245	C	G	30	4	0.12	KRT10	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr19	38976601	38976601	C	A	22	14	0.39	RYR1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr19	38976601	38976601	C	A	71	4	0.05	RYR1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.48	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr17	39659626	39659626	A	G	11	17	0.61	KRT13	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr12	39745726	39745726	C	G	47	26	0.36	KIF21A	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr21	39775557	39775557	C	T	11	17	0.61	ERG	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case2_Primary	Case2	Primary	Post Rx	chr1	39788360	39788360	T	G	32	4	0.11	MACF1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr17	40125676	40125676	G	A	75	5	0.06	CNP	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.64	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr17	40125676	40125676	G	A	39	4	0.09	CNP	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.67	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr6	40399939	40399939	G	A	101	7	0.06	LRFN2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.84	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chrX	40513786	40513786	G	A	11	5	0.31	MED14	NA	NA	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.78	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr17	40693129	40693129	A	G	11	5	0.31	NAGLU	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.78	Sanger	Validated
+Case14_Primary	Case14	Primary	Naïve	chr17	40693129	40693129	A	G	21	15	0.42	NAGLU	1	clonal	Likely pathogenic	FALSE	Passenger	NA	Damaging	disease_causing	Missense	0.28	Sanger	Validated
+Case5_Primary	Case5	Primary	Post Rx	chr17	40844636	40844636	G	A	75	5	0.06	CNTNAP1	0.72	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.64	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr12	41410559	41410559	T	C	47	26	0.36	CNTN1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr17	42390853	42390853	G	A	30	28	0.48	RUNDC3A	0.95	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr19	42396864	42396864	C	T	7	7	0.50	ARHGEF1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr19	42396864	42396864	C	T	26	21	0.45	ARHGEF1	1	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.86	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr1	42655055	42655055	C	T	22	14	0.39	FOXJ3	1	Subclonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.5	Sanger	Validated
+Case8_Metastasis	Case8	Metastasis	Naïve	chr1	42655055	42655055	C	T	71	4	0.05	FOXJ3	1	Subclonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.48	Sanger	Validated
+Case7_Primary	Case7	Primary	Naïve	chr19	42796345	42796345	G	A	7	7	0.50	CIC	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr19	42796345	42796345	G	A	26	21	0.45	CIC	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr2	42994806	42994806	C	A	44	34	0.44	HAAO	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr17	43333350	43333350	C	T	11	5	0.31	SPATA32	0.89	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.78	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr20	44444257	44444257	C	T	44	34	0.44	UBE2C	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr3	44684791	44684791	C	G	11	5	0.31	ZNF197	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr3	44684791	44684791	C	G	21	15	0.42	ZNF197	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr11	44931414	44931414	C	T	30	4	0.12	TSPAN18	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr6	45390457	45390457	G	A	7	7	0.50	RUNX2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr15	45702671	45702671	G	A	75	5	0.06	SPATA5L1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr3	45943216	45943216	G	A	47	26	0.36	CCR9	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr19	45997625	45997625	G	T	30	28	0.48	RTN2	0.75	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr17	46023346	46023346	T	G	65	42	0.39	PNPO	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case2_Primary	Case2	Primary	Post Rx	chr17	46023346	46023346	T	G	32	4	0.11	PNPO	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr17	46052623	46052623	C	T	30	4	0.12	CDK5RAP3	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.49	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr11	46637360	46637360	C	T	47	26	0.36	HARBI1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr11	46637360	46637360	C	T	29	11	0.28	HARBI1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.36	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr1	46642028	46642028	C	T	65	42	0.39	PIK3R3	0.92	Subclonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.86	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr17	46685369	46685369	C	T	30	4	0.12	HOXB7	0.73	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr17	46685381	46685381	A	G	30	4	0.12	HOXB7	0.79	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr11	46799750	46799750	G	A	39	4	0.09	CKAP5	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.67	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr4	46930751	46930751	T	G	65	42	0.39	GABRA4	1	Clonal	Likely Passenger	FALSE	Passenger	NA	Damaging	polymorphism	Missense	0.86	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr10	46970602	46970602	G	A	32	32	0.50	SYT15	0.29	Subclonal	Indeterminate	FALSE	NA	Neutral	Tolerated	polymorphism	Missense	0.82	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr10	46970603	46970603	C	A	32	32	0.50	SYT15	0.28	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.82	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr12	47160109	47160109	A	G	21	15	0.42	SLC38A4	1	clonal	Indeterminate	FALSE	NA	NA	NA	polymorphism	unknown	0.28	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr1	47515142	47515142	C	A	26	24	0.48	CYP4X1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.39	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr19	47548657	47548657	G	A	45	64	0.59	NPAS1	0.95	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr22	47569251	47569251	C	T	65	42	0.39	TBC1D22A	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr4	47605541	47605541	G	A	47	26	0.36	CORIN	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr11	47869854	47869854	G	C	65	42	0.39	NUP160	0.82	Subclonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.86	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr19	48525466	48525466	C	T	30	4	0.12	ELSPBP1	1	Subclonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.49	Sanger	Validated
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr19	48525466	48525466	C	T	37	25	0.40	ELSPBP1	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.79	Sanger	Validated
+Case8_Primary	Case8	Primary	Naïve	chrX	48896825	48896825	A	T	22	14	0.39	TFE3	1	Clonal	Indeterminate	TRUE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.5	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr3	49051674	49051674	C	T	47	26	0.36	WDR6	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr3	49052382	49052382	C	G	22	14	0.39	WDR6	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr3	49052382	49052382	C	G	71	4	0.05	WDR6	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr3	49336024	49336024	G	A	11	5	0.31	USP4	0.71	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr6	49489396	49489396	G	A	26	24	0.48	GLYATL3	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.39	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr3	49848499	49848499	A	G	21	9	0.30	UBA7	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.58	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr14	50092645	50092645	G	A	47	26	0.36	DNAAF2	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.36	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr10	50256548	50256548	G	A	101	7	0.06	VSTM4	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr10	50256548	50256548	G	A	32	32	0.50	VSTM4	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.82	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr12	50471866	50471866	G	A	29	11	0.28	ASIC1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr22	50665437	50665437	C	T	30	28	0.48	TUBGCP6	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr22	50885766	50885766	C	T	11	5	0.31	SBF1	0.96	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr22	50885766	50885766	C	T	21	15	0.42	SBF1	NA	NA	Synonymous	FALSE	NA	NA	Tolerated	disease_causing	synonymous	0.28	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr19	50940775	50940775	G	A	21	15	0.42	MYBPC2	0.42	Subclonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.28	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr12	51634804	51634804	C	T	54	5	0.08	DAZAP2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr12	51773256	51773256	C	T	32	32	0.50	GALNT6	0.88	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.82	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr14	52526879	52526879	A	C	22	14	0.39	NID2	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr14	52526879	52526879	A	C	71	4	0.05	NID2	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.48	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr3	52812981	52812981	T	C	21	9	0.30	ITIH1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr13	52971999	52971999	A	G	21	9	0.30	THSD1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.58	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr17	54520206	54520206	C	T	32	32	0.50	ANKFN1	0.95	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.82	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr12	54795409	54795409	G	A	75	5	0.06	ITGA5	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.64	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr17	55038274	55038274	C	G	65	42	0.39	COIL	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.86	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr18	55103013	55103013	C	T	22	14	0.39	ONECUT2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr18	55103013	55103013	C	T	71	4	0.05	ONECUT2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.48	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr1	55166996	55166996	G	A	45	64	0.59	MROH7	0.99	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.56	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr2	55191219	55191219	T	C	11	17	0.61	EML6	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr1	55544225	55544225	G	A	26	24	0.48	USP24	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr1	55563277	55563277	T	C	26	21	0.45	USP24	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr11	55681198	55681198	G	A	51	28	0.35	OR5W2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr11	55904449	55904449	G	A	39	4	0.09	OR8J3	1	Clonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	1	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr12	56137315	56137315	G	A	47	26	0.36	GDF11	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr12	56233389	56233389	C	T	37	25	0.40	MMP19	0.48	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr17	56329865	56329865	C	A	45	64	0.59	LPO	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.56	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr6	56374526	56374526	A	G	11	17	0.61	DST	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr6	56374526	56374526	A	G	21	9	0.30	DST	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.58	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr16	56534876	56534876	C	T	47	26	0.36	BBS2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr19	57089306	57089306	T	C	51	28	0.35	ZNF470	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr17	57128656	57128656	T	C	39	4	0.09	TRIM37	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.67	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr11	57327885	57327885	C	T	32	32	0.50	UBE2L6	0.89	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.82	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr15	57565424	57565424	G	A	21	9	0.30	TCF12	1	Clonal	Likely pathogenic	TRUE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.58	Sanger	Validated
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr12	57587431	57587431	C	T	65	42	0.39	LRP1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr12	57627665	57627665	C	T	11	5	0.31	SHMT2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr12	57627665	57627665	C	T	21	15	0.42	SHMT2	1	clonal	Synonymous	FALSE	NA	NA	NA	disease_causing	synonymous	0.28	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr20	57767642	57767642	G	A	101	7	0.06	ZNF831	0.98	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.84	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr11	57799215	57799215	T	A	30	4	0.12	OR6Q1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr11	57799215	57799215	T	A	37	25	0.40	OR6Q1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.79	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr11	57958184	57958184	G	A	30	4	0.12	OR9Q2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr11	57958184	57958184	G	A	37	25	0.40	OR9Q2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr3	58109323	58109323	C	T	26	24	0.48	FLNB	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr19	58131937	58131937	A	T	45	64	0.59	ZNF134	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr19	58131937	58131937	A	T	44	34	0.44	ZNF134	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.79	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr19	58353075	58353075	C	T	47	26	0.36	ZNF587B	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr19	58353075	58353075	C	T	29	11	0.28	ZNF587B	1	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr11	59245110	59245110	G	A	75	5	0.06	OR4D10	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.64	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr11	59575204	59575204	C	T	75	5	0.06	MRPL16	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr11	59575204	59575204	C	T	39	4	0.09	MRPL16	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.67	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr11	59630139	59630139	G	A	75	5	0.06	TCN1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.64	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr11	59630139	59630139	G	A	39	4	0.09	TCN1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.67	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr14	60194080	60194080	G	A	26	24	0.48	RTN1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.39	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr14	60581817	60581817	T	C	7	7	0.50	PCNXL4	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr14	60581817	60581817	T	C	26	21	0.45	PCNXL4	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.86	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr11	60689342	60689342	C	T	45	64	0.59	TMEM109	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr11	60689342	60689342	C	T	44	34	0.44	TMEM109	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	NA	disease_causing	Missense	0.79	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr20	60718900	60718900	C	T	51	28	0.35	SS18L1	1	Clonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr20	60718900	60718900	C	T	30	28	0.48	SS18L1	1	Clonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr13	61102684	61102684	G	A	29	11	0.28	TDRD3	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.36	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr20	61340838	61340838	G	A	26	21	0.45	NTSR1	0.84	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr20	61458133	61458133	C	T	26	24	0.48	COL9A3	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr17	61557773	61557773	A	G	51	28	0.35	ACE	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr17	61557773	61557773	A	G	30	28	0.48	ACE	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr18	61652418	61652418	A	G	47	26	0.36	SERPINB8	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case4_Metastasis	Case4	Metastasis	Naïve	chr8	61765146	61765146	A	G	32	32	0.50	CHD7	1	Clonal	Likely pathogenic	FALSE	Passenger	NA	Damaging	disease_causing	Missense	0.82	Sanger	Validated
+Case6_Metastasis	Case6	Metastasis	Naïve	chr17	61882516	61882516	G	A	30	28	0.48	DDX42	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr11	61916276	61916276	A	G	21	9	0.30	INCENP	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr3	62307623	62307623	G	A	44	34	0.44	C3orf14	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	NA	polymorphism	Missense	0.79	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr20	62592683	62592683	G	A	26	24	0.48	ZNF512B	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr20	62608681	62608681	C	T	39	4	0.09	SAMD10	1	Clonal	Indeterminate	FALSE	Passenger	NA	NA	disease_causing	Missense	1	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr11	64335173	64335173	G	T	30	28	0.48	SLC22A11	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr11	64435936	64435936	G	A	22	14	0.39	NRXN2	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr11	64435936	64435936	G	A	71	4	0.05	NRXN2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr11	65637429	65637429	A	G	30	4	0.12	EFEMP2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr11	65637429	65637429	A	G	37	25	0.40	EFEMP2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr11	65822577	65822577	T	G	7	7	0.50	SF3B2	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	NA	polymorphism	Missense	0.76	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr11	66062888	66062888	C	T	32	32	0.50	TMEM151A	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.82	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr8	66753657	66753657	G	A	11	5	0.31	PDE7A	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr8	66753657	66753657	G	A	21	15	0.42	PDE7A	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr16	67197962	67197962	C	G	21	15	0.42	HSF4;FBXL8	1	clonal	Indeterminate	FALSE	NA	NA	NA	polymorphism	Missense	0.28	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr16	67298311	67298311	C	A	54	5	0.08	SLC9A5	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr16	67298311	67298311	C	A	85	5	0.06	SLC9A5	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.65	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr14	68040093	68040093	A	G	21	9	0.30	PLEKHH1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.58	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr16	68225319	68225319	G	A	54	5	0.08	NFATC3	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr16	68225319	68225319	G	A	85	5	0.06	NFATC3	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.65	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr16	68264391	68264391	G	A	26	21	0.45	ESRP2	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr16	68901059	68901059	T	A	37	25	0.40	TANGO6	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr14	69256266	69256266	G	A	47	26	0.36	ZFP36L1	1	Clonal	Likely pathogenic	FALSE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.36	Sanger	Validated
+Case7_Metastasis	Case7	Metastasis	Naïve	chr15	70366907	70366907	G	A	26	21	0.45	TLE3	1	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.86	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr11	71193939	71193939	A	G	11	17	0.61	NADSYN1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr11	71193939	71193939	A	G	21	9	0.30	NADSYN1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr17	71197301	71197301	G	C	51	28	0.35	COG1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr17	71197301	71197301	G	C	30	28	0.48	COG1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr11	71260177	71260177	A	C	22	14	0.39	KRTAP5-9	0.84	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.5	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr5	71494679	71494679	C	T	30	28	0.48	MAP1B	0.85	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr9	71628696	71628696	C	T	26	21	0.45	PRKACG	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.86	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr11	71936176	71936176	G	C	11	5	0.31	INPPL1	1	Clonal	Likely pathogenic	TRUE	Passenger	Neutral	Damaging	disease_causing	Missense	0.78	Sanger	Validated
+Case14_Primary	Case14	Primary	Naïve	chr11	71936176	71936176	G	C	21	15	0.42	INPPL1	1	clonal	Likely pathogenic	TRUE	Passenger	NA	Damaging	disease_causing	Missense	0.28	Sanger	Validated
+Case12_Primary	Case12	Primary	Naïve	chr11	71948411	71948411	T	C	11	17	0.61	INPPL1	1	Clonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr11	71948411	71948411	T	C	21	9	0.30	INPPL1	1	Clonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr17	72245529	72245529	C	T	54	5	0.08	TTYH2	0.95	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr7	72856797	72856797	G	A	29	11	0.28	BAZ1B	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr17	72866091	72866091	G	A	45	64	0.59	FDXR	0.87	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr6	72892108	72892108	G	C	47	26	0.36	RIMS1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case2_Primary	Case2	Primary	Post Rx	chr5	73930784	73930784	A	G	32	4	0.11	ENC1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr14	74004501	74004501	G	A	47	26	0.36	ACOT1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr18	74091274	74091274	C	T	71	4	0.05	ZNF516	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr15	74174041	74174041	A	C	39	4	0.09	TBC1D21	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.67	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr15	74315386	74315386	G	A	21	9	0.30	PML	0.49	Subclonal	Likely passenger	TRUE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr10	74928111	74928111	A	G	11	17	0.61	FAM149B1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr10	74995016	74995016	A	C	21	9	0.30	FAM149B1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr14	75078583	75078583	A	G	11	17	0.61	LTBP2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr16	75269108	75269108	G	A	75	5	0.06	BCAR1	0.89	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr10	75550915	75550915	A	G	54	5	0.08	ZSWIM8	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr10	75550915	75550915	A	G	85	5	0.06	ZSWIM8	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr10	75607101	75607101	G	A	11	17	0.61	CAMK2G	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr15	75650858	75650858	A	C	21	9	0.30	MAN2C1	0.56	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.58	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr15	75684744	75684744	C	A	44	34	0.44	SIN3A	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.79	Sanger	Validated
+Case13_Primary	Case13	Primary	Post Rx	chr9	75783974	75783974	G	C	47	26	0.36	ANXA1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr6	75892979	75892979	G	C	101	7	0.06	COL12A1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.84	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr8	75898439	75898439	C	T	39	4	0.09	CRISPLD1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.67	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr15	75968635	75968635	G	A	101	7	0.06	CSPG4	0.94	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr5	75969781	75969781	G	C	47	26	0.36	IQGAP2	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr17	76235187	76235187	G	A	51	28	0.35	TMEM235	0.57	Subclonal	Synonymous	FALSE	NA	NA	NA	polymorphism	synonymous	0.53	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr7	77006186	77006186	A	G	7	7	0.50	GSAP	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case3_Primary	Case3	Primary	Naïve	chr15	77322909	77322909	G	A	56	15	0.21	PSTPIP1	0.79	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.44	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr16	77359884	77359884	C	T	26	21	0.45	ADAMTS18	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr7	77379054	77379054	G	A	65	42	0.39	RSBN1L	0.82	Subclonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case3_Primary	Case3	Primary	Naïve	chr8	77690511	77690511	A	G	56	15	0.21	ZFHX4	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.44	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr17	77757616	77757616	A	G	54	5	0.08	CBX2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr17	77757616	77757616	A	G	85	5	0.06	CBX2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.65	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr7	77789517	77789517	G	A	75	5	0.06	MAGI2	0.96	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr9	79320215	79320215	G	A	11	17	0.61	PRUNE2	1	Clonal	Synonymous	FALSE	NA	NA	NA	disease_causing	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr9	79320215	79320215	G	A	21	9	0.30	PRUNE2	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr13	79945082	79945082	C	T	44	34	0.44	RBM26	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr12	80083883	80083883	C	T	29	11	0.28	PAWR	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr5	80366339	80366339	G	A	101	7	0.06	RASGRF2	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.84	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr17	80575240	80575240	G	A	54	5	0.08	WDR45B	0.93	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr17	81043069	81043069	G	A	11	17	0.61	METRNL	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr17	81043069	81043069	G	A	21	9	0.30	METRNL	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr16	81077688	81077688	A	G	47	26	0.36	ATMIN	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr16	81077688	81077688	A	G	29	11	0.28	ATMIN	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr16	81145861	81145861	C	A	37	25	0.40	PKD1L2	1	Clonal	Indeterminate	FALSE	Passenger	NA	NA	NA	Missense	0.79	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr14	81610297	81610297	C	T	44	34	0.44	TSHR	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.79	Sanger	Not validated
+Case8_Primary	Case8	Primary	Naïve	chr14	81610320	81610320	A	G	22	14	0.39	TSHR	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.5	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr3	81635263	81635263	T	C	54	5	0.08	GBE1	0.95	Subclonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.53	Sanger	Validated
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr3	81635263	81635263	T	C	85	5	0.06	GBE1	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.65	Sanger	Validated
+Case1_Primary	Case1	Primary	Naïve	chr16	84256307	84256307	G	A	39	4	0.09	KCNG4	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	1	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr10	84711251	84711251	G	A	45	64	0.59	NRG3	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.56	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr11	85707967	85707967	G	C	47	26	0.36	PICALM	1	Clonal	Indeterminate	TRUE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr4	86916168	86916168	A	G	11	17	0.61	ARHGAP24	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr4	86916168	86916168	A	G	21	9	0.30	ARHGAP24	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr7	87175262	87175262	C	T	45	64	0.59	ABCB1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.56	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chrX	88008548	88008548	G	C	29	11	0.28	CPXCR1	NA	NA	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr13	88328496	88328496	C	T	45	64	0.59	SLITRK5	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr13	88328496	88328496	C	T	44	34	0.44	SLITRK5	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.79	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr10	88417895	88417895	T	C	85	5	0.06	OPN4	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr2	88885516	88885516	A	G	11	17	0.61	EIF2AK3	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr2	88885516	88885516	A	G	21	9	0.30	EIF2AK3	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.58	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr16	88932218	88932218	G	A	75	5	0.06	PABPN1L	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr11	88961048	88961048	C	T	29	11	0.28	TYR	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case12_Primary	Case12	Primary	Naïve	chr11	89185052	89185052	A	G	11	17	0.61	NOX4	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr11	89185052	89185052	A	G	21	9	0.30	NOX4	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr16	89212399	89212399	G	A	30	4	0.12	ACSF3	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.49	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr16	89262518	89262518	G	A	21	15	0.42	SLC22A31	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr4	89311876	89311876	C	T	39	4	0.09	HERC6	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	1	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr15	89398481	89398481	G	A	47	26	0.36	ACAN	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr5	90012465	90012465	A	G	30	4	0.12	GPR98	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr5	90012465	90012465	A	G	37	25	0.40	GPR98	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr10	90433385	90433385	T	C	101	7	0.06	LIPF	1	Clonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.84	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr15	90999517	90999517	G	A	75	5	0.06	IQGAP1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr10	91178005	91178005	A	G	47	26	0.36	IFIT5	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr10	91178005	91178005	A	G	29	11	0.28	IFIT5	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr10	91178009	91178009	A	C	47	26	0.36	IFIT5	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr10	91178009	91178009	A	C	29	11	0.28	IFIT5	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr7	91668022	91668022	A	G	11	17	0.61	AKAP9	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr11	92533384	92533384	A	G	11	17	0.61	FAT3	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr7	92731794	92731794	T	C	11	5	0.31	SAMD9	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr7	92731794	92731794	T	C	21	15	0.42	SAMD9	1	clonal	Likely passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.28	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr15	93547850	93547850	A	G	65	42	0.39	CHD2	0.77	Subclonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.86	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr12	93968688	93968688	A	G	21	9	0.30	SOCS2	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.58	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr8	94772156	94772156	T	G	22	14	0.39	TMEM67	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.5	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr8	94827662	94827662	A	G	32	32	0.50	TMEM67	1	Clonal	Likely pathogenic	FALSE	Passenger	NA	Damaging	disease_causing	Missense	0.82	Sanger	Validated
+Case8_Primary	Case8	Primary	Naïve	chr7	94897929	94897929	C	G	22	14	0.39	PPP1R9A	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr7	94897929	94897929	C	G	71	4	0.05	PPP1R9A	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr9	95077875	95077875	G	A	75	5	0.06	NOL8	0.92	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr10	95660554	95660554	C	T	22	14	0.39	SLC35G1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr9	95797774	95797774	G	A	26	24	0.48	FGD3	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.39	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr2	97493626	97493626	C	T	29	11	0.28	CNNM3	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr13	98664525	98664525	A	G	44	34	0.44	IPO5	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.79	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr9	98678074	98678074	C	T	32	32	0.50	ERCC6L2	0.79	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.82	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr9	99525469	99525469	T	C	65	42	0.39	ZNF510	1	Clonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.86	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr7	99627487	99627487	T	C	11	17	0.61	ZKSCAN1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr7	99627487	99627487	T	C	21	9	0.30	ZKSCAN1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.58	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr14	99640567	99640567	A	G	21	9	0.30	BCL11B	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.58	Sanger	Validated
+Case14_Primary	Case14	Primary	Naïve	chr3	99897190	99897190	C	T	21	15	0.42	CMSS1	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr7	99971918	99971918	A	G	54	5	0.08	PILRA	0.61	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr11	100168423	100168423	G	A	47	26	0.36	CNTN5	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr9	100617257	100617257	A	C	32	32	0.50	FOXE1	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.82	Sanger	Validated
+Case6_Primary	Case6	Primary	Naïve	chr12	101017622	101017622	G	A	51	28	0.35	GAS2L3	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr8	101153204	101153204	C	G	47	26	0.36	FBXO43	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr15	101528962	101528962	G	A	85	5	0.06	LRRK1	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr12	101603543	101603543	G	A	47	26	0.36	SLC5A8	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr15	101718294	101718294	G	A	47	26	0.36	CHSY1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr10	101835865	101835865	C	T	26	24	0.48	CPN1	1	Subclonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.39	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr10	102005670	102005670	C	T	29	11	0.28	CWF19L1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr10	102056865	102056865	C	T	32	32	0.50	PKD2L1	1	Clonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.82	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr14	102449796	102449796	C	T	47	26	0.36	DYNC1H1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr7	103180815	103180815	G	A	75	5	0.06	RELN	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr10	103343352	103343352	G	C	85	5	0.06	POLL	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr14	104491970	104491970	A	G	11	17	0.61	TDRD9	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr14	104641593	104641593	G	A	37	25	0.40	KIF26A	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.79	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr14	104646018	104646018	T	C	30	4	0.12	KIF26A	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.49	Sanger	Validated
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr14	104646018	104646018	T	C	37	25	0.40	KIF26A	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.79	Sanger	Validated
+Case13_Primary	Case13	Primary	Post Rx	chr4	105412309	105412309	G	C	47	26	0.36	CXXC4	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr7	106545768	106545768	T	C	54	5	0.08	PIK3CG	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr7	106545768	106545768	T	C	85	5	0.06	PIK3CG	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.65	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr8	106814591	106814591	C	A	22	14	0.39	ZFPM2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.5	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr9	107513272	107513272	C	T	7	7	0.50	NIPSNAP3A	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr12	108102907	108102907	A	C	26	24	0.48	PWP1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.39	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr1	108116760	108116760	A	G	75	5	0.06	VAV3	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.64	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr12	108962622	108962622	C	T	45	64	0.59	ISCU	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr12	108962622	108962622	C	T	44	34	0.44	ISCU	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.79	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr8	109462699	109462699	A	G	65	42	0.39	EMC2	0.56	Subclonal	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.86	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr12	109577713	109577713	G	A	51	28	0.35	ACACB	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr12	109577713	109577713	G	A	30	28	0.48	ACACB	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.36	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr12	109637227	109637227	A	G	39	4	0.09	ACACB	1	Subclonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.67	Sanger	Validated
+Case13_Primary	Case13	Primary	Post Rx	chr1	109742596	109742596	G	A	47	26	0.36	KIAA1324	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr1	109742779	109742779	G	A	47	26	0.36	KIAA1324	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr1	109865736	109865736	C	T	54	5	0.08	SORT1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr4	110624550	110624550	A	G	44	34	0.44	CASP6	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.79	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr1	110996606	110996606	T	C	51	28	0.35	PROK1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr13	111371859	111371859	G	A	30	28	0.48	ING1	0.95	Subclonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr5	111540162	111540162	T	C	11	17	0.61	EPB41L4A	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.54	Sanger	Validated
+Case14_Metastasis	Case14	Metastasis	Naïve	chr9	111753024	111753024	C	G	11	5	0.31	CTNNAL1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr9	111753024	111753024	C	G	21	15	0.42	CTNNAL1	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr1	111860310	111860310	G	A	22	14	0.39	CHIA	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.5	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr6	111913096	111913096	G	C	47	26	0.36	TRAF3IP2	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr1	113237215	113237215	G	A	44	34	0.44	MOV10	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.79	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr4	113460742	113460742	C	G	21	15	0.42	C4orf21	1	clonal	Likely Passenger	FALSE	Passenger	NA	Damaging	polymorphism	Missense	0.28	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chrX	114424697	114424697	A	C	37	25	0.40	RBMXL3	NA	NA	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.79	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr1	114448256	114448256	G	T	54	5	0.08	DCLRE1B	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr1	114448256	114448256	G	T	85	5	0.06	DCLRE1B	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.65	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr1	115256529	115256529	T	C	51	28	0.35	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.53	Sanger	Validated
+Case6_Metastasis	Case6	Metastasis	Naïve	chr1	115256529	115256529	T	C	30	28	0.48	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.36	Sanger	Validated
+Case7_Primary	Case7	Primary	Naïve	chr1	115256529	115256529	T	C	7	7	0.50	NRAS	1	Subclonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.76	Sanger	Validated
+Case8_Primary	Case8	Primary	Naïve	chr1	115256529	115256529	T	C	22	14	0.39	NRAS	1	Subclonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.5	Sanger	Validated
+Case3_Primary	Case3	Primary	Naïve	chr1	115256529	115256529	T	C	56	15	0.21	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.44	Sanger	Validated
+Case3_Metastasis	Case3	Metastasis	Naïve	chr1	115256529	115256529	T	C	26	24	0.48	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.39	Sanger	Validated
+Case5_Primary	Case5	Primary	Post Rx	chr1	115256529	115256529	T	C	75	5	0.06	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.64	Sanger	Validated
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr1	115256529	115256529	T	C	39	4	0.09	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.67	Sanger	Validated
+Case7_Metastasis	Case7	Metastasis	Naïve	chr1	115256529	115256529	T	C	26	21	0.45	NRAS	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.86	Sanger	Validated
+Case8_Metastasis	Case8	Metastasis	Naïve	chr1	115256529	115256529	T	C	71	4	0.05	NRAS	1	Subclonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.48	Sanger	Validated
+Case4_Metastasis	Case4	Metastasis	Naïve	chr1	115256530	115256530	G	T	32	32	0.50	NRAS	0.67	Subclonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.82	Sanger	Validated
+Case13_Primary	Case13	Primary	Post Rx	chr10	116045752	116045752	C	T	47	26	0.36	VWA2	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.36	Sanger	Not validated
+Case13_Primary	Case13	Primary	Post Rx	chr10	116045762	116045762	C	T	47	26	0.36	VWA2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr12	117274007	117274007	G	A	39	4	0.09	RNFT2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.67	No validation	
+Case3_Primary	Case3	Primary	Naïve	chr11	118506193	118506193	A	T	56	15	0.21	PHLDB1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.44	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr2	120362284	120362284	G	C	47	26	0.36	PCDP1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr10	120809360	120809360	G	A	85	5	0.06	EIF3A	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.65	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr3	121303867	121303867	G	A	26	24	0.48	ARGFX	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr5	121488252	121488252	A	G	51	28	0.35	ZNF474	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr5	121488252	121488252	A	G	30	28	0.48	ZNF474	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr5	121759054	121759054	T	C	32	32	0.50	SNCAIP	0.95	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.82	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr3	122474191	122474191	T	G	32	32	0.50	HSPBAP1	0.82	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.82	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr9	123374740	123374740	C	A	7	7	0.50	MEGF9	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr9	123374740	123374740	C	A	26	21	0.45	MEGF9	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.86	No validation	
+Case4_Metastasis	Case4	Metastasis	Naïve	chr12	123687844	123687844	G	A	32	32	0.50	MPHOSPH9	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.82	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr11	123756072	123756072	C	T	30	4	0.12	TMEM225	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.49	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr12	123879666	123879666	A	G	22	14	0.39	SETD8	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr12	123879666	123879666	A	G	71	4	0.05	SETD8	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.48	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr12	123879668	123879668	G	C	22	14	0.39	SETD8	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.5	Sanger	Not validated
+Case8_Metastasis	Case8	Metastasis	Naïve	chr12	123879668	123879668	G	C	71	4	0.05	SETD8	1	Clonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.48	Sanger	Not validated
+Case7_Metastasis	Case7	Metastasis	Naïve	chr9	123928401	123928401	A	G	26	21	0.45	CNTRL	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr7	124493087	124493087	T	C	11	17	0.61	POT1	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr11	124622010	124622010	A	G	11	17	0.61	VSIG2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr11	124622010	124622010	A	G	21	9	0.30	VSIG2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr9	125154762	125154762	G	A	51	28	0.35	PTGS1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr9	125154762	125154762	G	A	30	28	0.48	PTGS1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr12	125438540	125438540	C	T	54	5	0.08	DHX37	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr12	125509586	125509586	G	A	47	26	0.36	BRI3BP	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr4	125593347	125593347	C	A	22	14	0.39	ANKRD50	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr4	125593347	125593347	C	A	71	4	0.05	ANKRD50	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.48	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr4	126242134	126242134	A	G	101	7	0.06	FAT4	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.84	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr10	127461192	127461192	G	A	47	26	0.36	MMP21	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr10	127730777	127730777	T	C	30	4	0.12	ADAM12	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr10	127730777	127730777	T	C	37	25	0.40	ADAM12	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.79	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr3	128204849	128204849	C	T	21	9	0.30	GATA2	0.94	Subclonal	Likely pathogenic	FALSE	Passenger	Neutral	Damaging	disease_causing	Missense	0.58	Sanger	Validated
+Case5_Primary	Case5	Primary	Post Rx	chr2	129026411	129026411	G	A	75	5	0.06	HS6ST1	0.59	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chrX	129168520	129168520	C	T	26	21	0.45	BCORL1	NA	NA	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.86	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr10	129178387	129178387	G	A	85	5	0.06	DOCK1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	Splice variant	0.65	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr12	129190540	129190540	C	G	45	64	0.59	TMEM132C	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr12	129190540	129190540	C	G	44	34	0.44	TMEM132C	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.79	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr10	129903633	129903633	G	C	29	11	0.28	MKI67	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr10	129905853	129905853	G	A	29	11	0.28	MKI67	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr3	130095127	130095127	G	A	85	5	0.06	COL6A5	0.7	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.65	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr9	131329205	131329205	A	G	11	17	0.61	SPTAN1	0.94	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr9	131329205	131329205	A	G	21	9	0.30	SPTAN1	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr12	131593399	131593399	G	A	30	28	0.48	GPR133	0.83	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr6	131602740	131602740	G	A	47	26	0.36	AKAP7	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr6	131602740	131602740	G	A	29	11	0.28	AKAP7	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr6	131914276	131914276	A	G	11	17	0.61	MED23	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr6	131914276	131914276	A	G	21	9	0.30	MED23	1	Clonal	Indeterminate	TRUE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.58	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr9	133342180	133342180	C	T	101	7	0.06	ASS1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.84	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr12	133634540	133634540	A	G	39	4	0.09	ZNF84	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	1	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr8	133894176	133894176	A	G	11	17	0.61	TG	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Damaging	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr8	133899370	133899370	A	G	21	9	0.30	TG	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr8	133935660	133935660	A	G	39	4	0.09	TG	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.67	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr8	134072406	134072406	T	C	26	24	0.48	SLA	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr5	134871080	134871080	C	A	47	26	0.36	NEUROG1	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr7	135095310	135095310	A	G	11	5	0.31	CNOT4	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.78	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chrX	135291500	135291500	G	A	29	11	0.28	FHL1	NA	NA	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr9	136568098	136568098	G	A	22	14	0.39	SARDH	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr6	136597300	136597300	C	T	101	7	0.06	BCLAF1	1	Clonal	Likely pathogenic	TRUE	Driver	NA	Tolerated	disease_causing	Missense	0.84	Sanger	Validated
+Case6_Metastasis	Case6	Metastasis	Naïve	chr5	137600214	137600214	G	A	30	28	0.48	GFRA3	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr9	139906966	139906966	G	A	54	5	0.08	ABCA2	0.35	Subclonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.53	Sanger	Not validated
+Case13_Primary	Case13	Primary	Post Rx	chr5	140011537	140011537	C	T	47	26	0.36	CD14	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr3	140178491	140178491	G	A	11	5	0.31	CLSTN2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr3	140178491	140178491	G	A	21	15	0.42	CLSTN2	1	clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.28	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr9	140446668	140446668	C	G	45	64	0.59	MRPL41	0.72	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr7	140453136	140453136	A	T	30	4	0.12	BRAF	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.49	Sanger	Validated
+Case11_Primary	Case11	Primary	Post Rx	chr7	140453136	140453136	A	T	54	5	0.08	BRAF	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.53	Sanger	Validated
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr7	140453136	140453136	A	T	37	25	0.40	BRAF	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.79	Sanger	Validated
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr7	140453136	140453136	A	T	85	5	0.06	BRAF	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Damaging	disease_causing	Missense	0.65	Sanger	Validated
+Case7_Primary	Case7	Primary	Naïve	chr9	140878667	140878667	G	T	7	7	0.50	CACNA1B	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr9	140878667	140878667	G	T	26	21	0.45	CACNA1B	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr8	143562627	143562627	G	T	7	7	0.50	BAI1	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr8	143562627	143562627	G	T	26	21	0.45	BAI1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.86	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr8	143957210	143957210	C	T	11	5	0.31	CYP11B1	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr8	143957210	143957210	C	T	21	15	0.42	CYP11B1	1	clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.28	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr8	145165035	145165035	G	A	30	28	0.48	KIAA1875	0.76	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr1	145439797	145439797	A	G	21	9	0.30	TXNIP	1	Clonal	Indeterminate	FALSE	NA	Neutral	Tolerated	disease_causing	Missense	0.58	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr8	146003881	146003881	G	A	30	4	0.12	ZNF34	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr3	147127911	147127911	C	T	26	24	0.48	ZIC1	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr2	148677876	148677876	T	C	30	4	0.12	ACVR2A	1	Clonal	Likely pathogenic	TRUE	Driver	Deleterious	Tolerated	disease_causing	Missense	0.49	Sanger	Not validated
+Case6_Primary	Case6	Primary	Naïve	chr7	148876387	148876387	C	T	51	28	0.35	ZNF398	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr2	149542525	149542525	G	A	29	11	0.28	EPC2	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.36	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr5	149681704	149681704	G	A	26	21	0.45	ARSI	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.86	Sanger	Validated
+Case9_Primary	Case9	Primary	Post Rx	chr5	150029886	150029886	C	T	30	4	0.12	SYNPO	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.49	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr7	150269792	150269792	G	A	29	11	0.28	GIMAP4	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr1	150551997	150551997	G	A	47	26	0.36	MCL1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr6	151152664	151152664	A	G	11	17	0.61	PLEKHG1	0.96	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr6	151152664	151152664	A	G	21	9	0.30	PLEKHG1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.58	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr1	151236485	151236485	C	T	54	5	0.08	PSMD4	0.85	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr6	151773697	151773697	C	T	11	5	0.31	C6orf211	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr6	151773697	151773697	C	T	21	15	0.42	C6orf211	1	clonal	Likely passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.28	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chrX	152226221	152226221	G	A	65	42	0.39	PNMA3	NA	NA	Likely Passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.86	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr1	152324649	152324649	A	T	26	24	0.48	FLG2	1	Subclonal	Likely passenger	TRUE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.39	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr1	152733220	152733220	C	T	11	5	0.31	KPRP	0.74	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.78	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chrX	153690569	153690569	C	T	65	42	0.39	PLXNA3	NA	NA	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr1	155296883	155296883	G	C	22	14	0.39	RUSC1	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr1	155296883	155296883	G	C	71	4	0.05	RUSC1	1	Subclonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.48	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr1	156617858	156617858	C	T	7	7	0.50	BCAN	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.76	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr1	156704269	156704269	G	A	21	15	0.42	RRNAD1	0.7	Subclonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.28	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr2	158114859	158114859	G	C	47	26	0.36	GALNT5	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr2	158142606	158142606	C	T	54	5	0.08	GALNT5	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr7	158282427	158282427	C	T	54	5	0.08	PTPRN2	1	Clonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr7	158282427	158282427	C	T	85	5	0.06	PTPRN2	1	Subclonal	Indeterminate	FALSE	Passenger	Deleterious	Tolerated	disease_causing	Missense	0.65	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr3	158519993	158519993	G	A	47	26	0.36	MFSD1	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr4	159627792	159627792	G	C	47	26	0.36	ETFDH	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Damaging	polymorphism	Missense	0.36	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr1	159778027	159778027	C	T	30	4	0.12	FCRL6	1	Clonal	Indeterminate	FALSE	NA	NA	NA	NA	stopgain	0.49	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr6	160978510	160978510	A	G	54	5	0.08	LPA	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr1	161337641	161337641	A	G	39	4	0.09	C1orf192	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	1	No validation	
+Case3_Metastasis	Case3	Metastasis	Naïve	chr2	162758541	162758541	A	G	26	24	0.48	SLC4A10	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.39	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr4	164436598	164436598	G	A	47	26	0.36	TMA16	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case1_Primary	Case1	Primary	Naïve	chr1	164761760	164761760	G	T	39	4	0.09	PBX1	1	Clonal	Indeterminate	TRUE	NA	NA	NA	NA	stopgain	1	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr4	166388914	166388914	C	T	29	11	0.28	CPE	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr6	168710929	168710929	C	T	75	5	0.06	DACT2	0.99	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.64	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr6	170049329	170049329	C	T	45	64	0.59	WDR27	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr6	170049329	170049329	C	T	44	34	0.44	WDR27	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.79	No validation	
+Case9_Primary	Case9	Primary	Post Rx	chr5	172110826	172110826	G	A	30	4	0.12	NEURL1B	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.49	No validation	
+Case9_Metastasis	Case9	Metastasis	Post Rx	chr5	172110826	172110826	G	A	37	25	0.40	NEURL1B	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.79	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr3	172165757	172165757	G	T	47	26	0.36	GHSR	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr1	174190191	174190191	C	T	47	26	0.36	RABGAP1L	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.36	No validation	
+Case5_Primary	Case5	Primary	Post Rx	chr4	174223306	174223306	C	T	75	5	0.06	GALNT7	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.64	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr5	176863126	176863126	G	A	26	21	0.45	GRK6	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case10_Primary	Case10	Primary	Naïve	chr5	176930124	176930124	C	T	45	64	0.59	DOK3	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.56	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr4	177713353	177713353	A	G	21	9	0.30	VEGFC	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	NA	disease_causing	Missense	0.58	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr1	178489539	178489539	C	T	21	15	0.42	TEX35	1	clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.28	No validation	
+Case2_Metastasis	Case2	Metastasis	Post Rx	chr2	179425987	179425987	C	T	65	42	0.39	TTN	1	Clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.86	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr5	180661369	180661369	G	A	101	7	0.06	TRIM41	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	Tolerated	polymorphism	Missense	0.84	No validation	
+Case3_Primary	Case3	Primary	Naïve	chr1	183511626	183511626	G	T	56	15	0.21	SMG7	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.44	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr1	186283139	186283139	T	C	11	17	0.61	TPR	1	Clonal	Synonymous	TRUE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr4	188924066	188924066	C	T	7	7	0.50	ZFP42	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case7_Metastasis	Case7	Metastasis	Naïve	chr4	188924066	188924066	C	T	26	21	0.45	ZFP42	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.86	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr1	190250841	190250841	C	T	11	17	0.61	FAM5C	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case5_Metastasis	Case5	Metastasis	Post Rx	chr3	196733597	196733597	G	A	39	4	0.09	MFI2	0.99	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.67	No validation	
+Case13_Metastasis	Case13	Metastasis	Post Rx	chr1	197411305	197411305	G	A	29	11	0.28	CRB1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr1	200968527	200968527	G	A	47	26	0.36	KIF21B	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.36	No validation	
+Case4_Primary	Case4	Primary	Naïve	chr1	203767828	203767828	G	A	101	7	0.06	ZBED6	1	Clonal	Likely passenger	FALSE	Passenger	Neutral	NA	polymorphism	Missense	0.84	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr1	204499896	204499896	C	G	7	7	0.50	MDM4	1	Subclonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.76	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr1	206681291	206681291	G	A	11	5	0.31	RASSF5	1	Clonal	Indeterminate	FALSE	Passenger	Neutral	Tolerated	disease_causing	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr1	206681291	206681291	G	A	21	15	0.42	RASSF5	1	clonal	Indeterminate	FALSE	Passenger	NA	Tolerated	disease_causing	Missense	0.28	No validation	
+Case7_Primary	Case7	Primary	Naïve	chr2	207457371	207457371	C	G	7	7	0.50	ADAM23	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.76	No validation	
+Case12_Primary	Case12	Primary	Naïve	chr2	209010699	209010699	G	A	11	17	0.61	CRYGB	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.54	No validation	
+Case12_Metastasis	Case12	Metastasis	Naïve	chr2	209010699	209010699	G	A	21	9	0.30	CRYGB	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.58	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr2	210560491	210560491	G	A	54	5	0.08	MAP2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr2	210560491	210560491	G	A	85	5	0.06	MAP2	1	Subclonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.65	No validation	
+Case14_Metastasis	Case14	Metastasis	Naïve	chr2	215275011	215275011	C	A	11	5	0.31	SPAG16	1	Clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.78	No validation	
+Case14_Primary	Case14	Primary	Naïve	chr2	215275011	215275011	C	A	21	15	0.42	SPAG16	1	clonal	Likely passenger	FALSE	Passenger	NA	Tolerated	polymorphism	Missense	0.28	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr2	219028932	219028932	G	A	30	28	0.48	CXCR1	0.93	Subclonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.36	No validation	
+Case10_Metastasis	Case10	Metastasis	Naïve	chr2	219449406	219449406	C	T	44	34	0.44	RQCD1	1	Clonal	Likely pathogenic	FALSE	Passenger	Deleterious	Damaging	disease_causing	Missense	0.79	Sanger	Not validated
+Case14_Metastasis	Case14	Metastasis	Naïve	chr1	220978599	220978599	G	A	11	5	0.31	36951	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.78	No validation	
+Case6_Primary	Case6	Primary	Naïve	chr1	231830062	231830062	C	T	51	28	0.35	DISC1;TSNAX-DISC1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr1	231830062	231830062	C	T	30	28	0.48	DISC1;TSNAX-DISC1	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case11_Primary	Case11	Primary	Post Rx	chr1	232596671	232596671	C	T	54	5	0.08	SIPA1L2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.53	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr1	232596671	232596671	C	T	85	5	0.06	SIPA1L2	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.65	No validation	
+Case8_Primary	Case8	Primary	Naïve	chr2	233246466	233246466	C	A	22	14	0.39	ALPP	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.5	No validation	
+Case8_Metastasis	Case8	Metastasis	Naïve	chr2	233246466	233246466	C	A	71	4	0.05	ALPP	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.48	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr2	239071475	239071475	G	T	47	26	0.36	KLHL30;FAM132B	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case6_Metastasis	Case6	Metastasis	Naïve	chr1	241729883	241729883	C	T	30	28	0.48	KMO	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case13_Primary	Case13	Primary	Post Rx	chr1	242159672	242159672	C	G	47	26	0.36	MAP1LC3C	1	Clonal	Synonymous	FALSE	NA	NA	NA	NA	synonymous	0.36	No validation	
+Case11_Metastasis	Case11	Metastasis	Post Rx	chr2	242743549	242743549	C	A	85	5	0.06	GAL3ST2	1	clonal	Likely passenger	FALSE	Passenger	Deleterious	Tolerated	polymorphism	Missense	0.65	No validation	
