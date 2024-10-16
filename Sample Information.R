@@ -84,9 +84,8 @@ meta1_maf <- subset(meta1_maf, variant_type == "snv")
 # TXT File - Column 1: Sample ID | Column 2: Primary / Metastasis ----
 sample_info <- tc_maf %>% select(`Unique_Patient_Identifier`, `Sample type`)
 
-setnames(tcga_maf, "Unique_Patient_Identifier", "case_submitter_id", skip_absent=TRUE)
-tcga <- full_join(tcga_maf, tcga_clinical, by = "case_submitter_id")
-tcga <- tcga %>% select(`case_submitter_id`, `ajcc_pathologic_m`)
+tcga <- full_join(tcga_maf, tcga_clinical, by = "Unique_Patient_Identifier")
+tcga <- tcga %>% select(`Unique_Patient_Identifier`, `ajcc_pathologic_m`)
 setnames(tcga, "case_submitter_id", "Unique_Patient_Identifier", skip_absent=TRUE)
 setnames(tcga, "ajcc_pathologic_m", "Sample type", skip_absent=TRUE)
 
