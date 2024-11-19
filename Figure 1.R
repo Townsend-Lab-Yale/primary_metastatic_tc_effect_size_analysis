@@ -158,5 +158,5 @@ summed_snv_by_group <- as.matrix(summed_snv_by_group)
 colnames(summed_snv_by_group)[c(1, 2)] <- c("Metastases", "Primary")
 summed_snv_by_group <- summed_snv_by_group[, c("Primary", "Metastases")]
 rownames(summed_snv_by_group) <- rownames(snv_counts)
-Figure_1 <- MutationalPatterns::plot_96_profile(summed_snv_by_group, ymax = 0.6)
+Figure_1 <- MutationalPatterns::plot_96_profile(summed_snv_by_group, ymax = 0.4)
 ggsave("Figure_1.png", width = 8, height = 6, dpi = 600)
