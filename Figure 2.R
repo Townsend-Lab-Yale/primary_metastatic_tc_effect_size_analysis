@@ -69,7 +69,9 @@ genie <- genie %>% select(Hugo_Symbol, Chromosome, Start_Position, End_Position,
                           dbSNP_RS, Tumor_Sample_Barcode)
 genie <- genie %>% filter(`Variant_Type` == "SNP")
 genie_maf <- preload_maf(maf = genie, refset = "ces.refset.hg19")
-
+genie_maf <- genie_maf %>%
+  inner_join(Sample_Information, by = "Unique_Patient_Identifier") %>%
+  select(all_of(names(genie_maf)))
 
 #Loading 2nd paper data(hg19):
 paper_data_2nd <- fread("2nd_paper_Data.txt")
